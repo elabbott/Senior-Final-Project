@@ -7,8 +7,15 @@ Yummytummies::Application.routes.draw do
 
   
 devise_scope :user do
-  root to: "devise/sessions#new"
-end
+    authenticated :user do
+
+      root :to => 'homepages#index', as: :authenticated_root
+    end
+
+    unauthenticated :user do
+      root :to => 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,28 +1,21 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Sign in</h3>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%- if devise_mapping.registerable? %>
-        <%= link_to 'Sign up', new_registration_path(resource_name), class: 'right'  %>
-      <% end -%>
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%- if devise_mapping.recoverable? %>
-        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
-      <% end -%>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-      <%= f.submit 'Sign in', :class => 'button right' %>
-      <% if devise_mapping.rememberable? -%>
-        <div class="checkbox" style="width:150px">
-          <label>
-            <%= f.check_box :remember_me %> Remember me
-          </label>
-        </div>
-      <% end -%>
-  <% end %>
-</div>
+		<h1 class="text-center">Welcome to Yummy Tummies!</h1>
+		<br/>
+			<strong class="text-center">Concerned about your child's health and wellness? Want to make a difference when it comes to eating 
+				healthy and nutrtious meals? Then Yummy Tummies is for you! Here we strive to provide local ingredients
+				and home cooked meals so that your Child will be eating happier and healthier for every meal! Interested?
+				Press the sign up button below to create an account, or the login button if you already have one.</strong>
+		<br/>		
+		<br/>
+			<strong class="text-center">Don't have a Yummy Tummies provider near you but want to get started? When you sign up, check the franchise
+				creation box and we'll get you on your way of starting your own franchise!</strong>
+
+		<br/>
+		<br/>
+			<p id="action" class="lead text-center">
+				<a href="#newsessionmodal-form" class="btn btn-primary btn-lg custombtnblock"data-toggle="modal">Login</a>
+				<%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary btn-lg custombtnblock' %>
+			</p>
+	</main>
+</body>
+
+<%= render :partial => 'new' %>
