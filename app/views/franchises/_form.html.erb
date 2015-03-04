@@ -1,0 +1,39 @@
+<%= form_for(@franchise) do |f| %>
+  <% if @franchise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@franchise.errors.count, "error") %> prohibited this franchise from being saved:</h2>
+
+      <ul>
+      <% @franchise.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="authform">
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, :autofocus => true, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :encrypted_password %><br>
+    <%= f.text_field :encrypted_password,  class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %><br>
+    <%= f.text_area :address, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fid %><br>
+    <%= f.number_field :fid, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :school_id %><br>
+    <%= f.number_field :school_id, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Create Franchise', :class => 'btn btn-primary btn-lg custombtnblock' %>
+  </div>
+ </div>
+<% end %>

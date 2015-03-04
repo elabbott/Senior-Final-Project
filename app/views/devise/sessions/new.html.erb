@@ -6,14 +6,15 @@
 				Press the sign up button below to create an account, or the login button if you already have one.</strong>
 		<br/>		
 		<br/>
-			<strong class="text-center">Don't have a Yummy Tummies provider near you but want to get started? When you sign up, check the franchise
-				creation box and we'll get you on your way of starting your own franchise!</strong>
+			<strong class="text-center">Don't have a Yummy Tummies provider near you but want to get started? Click the Request Franchise
+				button and we'll get you on your way of starting your own franchise!</strong>
 
 		<br/>
 		<br/>
 			<p id="action" class="lead text-center">
 				<a href="#newsessionmodal-form" class="btn btn-primary btn-lg custombtnblock"data-toggle="modal">Login</a>
 				<%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary btn-lg custombtnblock' %>
+				<%= link_to "Request Franchise", new_franchise_path, :class => 'btn btn-primary btn-lg custombtnblock' %>
 			</p>
 
 <%= render :partial => 'new' %>

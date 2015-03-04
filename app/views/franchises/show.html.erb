@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @franchise.email %>
+</p>
+
+<p>
+  <strong>Encrypted password:</strong>
+  <%= @franchise.encrypted_password %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @franchise.address %>
+</p>
+
+<p>
+  <strong>Fid:</strong>
+  <%= @franchise.fid %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @franchise.school_id %>
+</p>
+
+<%= link_to 'Edit', edit_franchise_path(@franchise) %> |
+<%= link_to 'Back', franchises_path %>

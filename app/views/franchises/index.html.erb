@@ -1,0 +1,35 @@
+<h1>Listing franchises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Encrypted password</th>
+      <th>Address</th>
+      <th>Fid</th>
+      <th>School</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @franchises.each do |franchise| %>
+      <tr>
+        <td><%= franchise.email %></td>
+        <td><%= franchise.encrypted_password %></td>
+        <td><%= franchise.address %></td>
+        <td><%= franchise.fid %></td>
+        <td><%= franchise.school_id %></td>
+        <td><%= link_to 'Show', franchise %></td>
+        <td><%= link_to 'Edit', edit_franchise_path(franchise) %></td>
+        <td><%= link_to 'Destroy', franchise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Franchise', new_franchise_path %>

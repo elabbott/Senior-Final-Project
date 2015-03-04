@@ -1,4 +1,6 @@
 Yummytummies::Application.routes.draw do
+  resources :franchises
+
   resources :schools
 
   resources :children
