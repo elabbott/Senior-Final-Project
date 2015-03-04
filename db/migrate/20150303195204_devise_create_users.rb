@@ -8,7 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.text :lname
       t.date :dob
       t.text :address
-      t.integer :child_id, null: false
+      t.integer :child_id
       
       
       ## Recoverable

@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150304202739) do
     t.text     "lname"
     t.date     "dob"
     t.text     "address"
+    t.integer  "child_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
