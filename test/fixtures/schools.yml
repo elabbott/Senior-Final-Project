@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+   name: MyText
+  address: MyText
+  school_id: 
+  user_id: MyString
+  int[]: MyString
+  meal_id: MyString
+  int[]: MyString
+
+two:
+   name: MyText
+  address: MyText
+  school_id: 
+  user_id: MyString
+  int[]: MyString
+  meal_id: MyString
+  int[]: MyString
