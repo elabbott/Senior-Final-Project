@@ -1,17 +1,19 @@
-<% Child.all.each do |children| %>
-	<% if children.school_id = :school_id %>
 		<table class="table table-striped table-bordered">
 			<thead>
 				<tr>
 					<th>Name</th>
 					<th>School Id</th>
+					<th>Select Child</th>
 			</thead>
 			<tbody>
-				<tr>
-					<td><%= children.name %></td>
-					<td><%= children.school_id %></td>
-				</tr>
+				<% Child.where(:id => @school_id).each do |c| %>
+							<tr>
+								<td><%= c.name %></td>
+								<td><%= c.school_id %></td>
+								<td>
+								</td>
+							</tr>
+						<% end %>
 			</tbody>
 		</table>
-	<% end %>
-<% end %>
+

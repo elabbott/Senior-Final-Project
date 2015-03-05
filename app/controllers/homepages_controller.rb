@@ -4,8 +4,8 @@ class HomepagesController < ApplicationController
   respond_to :html
 
   def index
-    @homepages = Homepage.all
-    respond_with(@homepages)
+    @children = Child.all
+    respond_with(@children)
   end
 
   def show
