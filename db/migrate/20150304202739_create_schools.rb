@@ -4,8 +4,8 @@ class CreateSchools < ActiveRecord::Migration
       t.text :name
       t.text :address
       t.integer :school_id
-      t.string :user_id
-      t.string :meal_id
+      t.integer :user_id
+      t.integer :meal_id
 
       t.timestamps
     end

@@ -4,7 +4,6 @@ class CreateFranchises < ActiveRecord::Migration
       t.string :email
       t.string :encrypted_password
       t.text :address
-      t.integer :fid
       t.integer :school_id
 
       t.timestamps

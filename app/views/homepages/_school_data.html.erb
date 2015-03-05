@@ -1,0 +1,17 @@
+<% Child.all.each do |children| %>
+	<% if children.school_id = :school_id %>
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>School Id</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= children.name %></td>
+					<td><%= children.school_id %></td>
+				</tr>
+			</tbody>
+		</table>
+	<% end %>
+<% end %>

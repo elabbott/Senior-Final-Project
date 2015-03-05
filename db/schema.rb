@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20150304230948) do
     t.integer  "school_id"
     t.integer  "user_id"
     t.integer  "meal_id"
-    t.integer  "child_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,7 +26,6 @@ ActiveRecord::Schema.define(version: 20150304230948) do
     t.string   "email"
     t.string   "encrypted_password"
     t.text     "address"
-    t.integer  "fid"
     t.integer  "school_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -42,8 +40,8 @@ ActiveRecord::Schema.define(version: 20150304230948) do
     t.text     "name"
     t.text     "address"
     t.integer  "school_id"
-    t.string   "user_id"
-    t.string   "meal_id"
+    t.integer  "user_id"
+    t.integer  "meal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

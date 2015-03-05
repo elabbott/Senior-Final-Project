@@ -5,7 +5,6 @@ class CreateChildren < ActiveRecord::Migration
       t.integer :school_id
       t.integer :user_id
       t.integer :meal_id
-      t.integer :child_id
 
       t.timestamps
     end

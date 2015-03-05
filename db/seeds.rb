@@ -14,20 +14,28 @@ School.create!(
     school_id: 1
  )
 
+School.create!(
+    name: "Valdosta Middle",
+    address: "201 Oak Street",
+    school_id: 2
+ )
+
 Child.create!(
     name: "Jimmy",
     school_id: 1,
-    child_id: 1
   )
   
 Child.create!(
     name: "Meghan",
     school_id: 1,
-    child_id: 2
   )
   
 Child.create!(
     name: "Evan",
     school_id: 1,
-    child_id: 3
+  )
+
+Child.create!(
+    name: "Ben",
+    school_id: 2,
   )
