@@ -30,6 +30,7 @@
       <%= f.label :address, "Address" %>
       <%= f.text_field :address, class: 'form-control' %>
     </div>
-     <%= f.submit 'Sign up', :class => 'button right' %>
+     <%= f.submit 'Sign up', :class => 'button left' %>
+     <%= link_to "Back", unauthenticated_root_path, :class => 'button right' %>
   <% end %>
 </div>

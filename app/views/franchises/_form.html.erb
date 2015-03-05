@@ -33,7 +33,8 @@
     <%= f.number_field :school_id, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit 'Create Franchise', :class => 'btn btn-primary btn-lg custombtnblock' %>
+    <%= f.submit 'Create Franchise', :class => 'button left' %>
+    <%= link_to "Back", unauthenticated_root_path, :class => 'button right' %>
   </div>
  </div>
 <% end %>
