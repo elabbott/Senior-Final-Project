@@ -8,6 +8,7 @@
 Child.delete_all
 School.delete_all
 User.delete_all
+Meal.delete_all
 
 User.create!(
     email: "jkbenoit@valdosta.edu",
@@ -17,6 +18,16 @@ User.create!(
     dob: '06/02/1992',
     address: "102 Starky Place",
     user_type: 4
+)
+
+User.create!(
+    email: "elabbott@valdosta.edu",
+    password: "123123123",
+    fname: "Eric",
+    lname: "Abbott",
+    dob: '01/13/1993',
+    address: "2111 N Oak St",
+    user_type: 3
 )
 
 School.create!(
@@ -49,4 +60,18 @@ Child.create!(
 Child.create!(
     name: "Ben",
     school_id: 2,
+  )
+  
+ Meal.create!(
+    name: "Spaghetti",
+    description: "Noodles, Sauce, and Meat",
+    calories: 221,
+    price: 5.45
+  )
+  
+  Meal.create!(
+    name: "Hamburger and Fries",
+    description: "Beef Patty and Bread buns with potato fries",
+    calories: 719,
+    price: 3.99
   )

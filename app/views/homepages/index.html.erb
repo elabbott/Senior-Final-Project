@@ -48,6 +48,37 @@
 		</div>
 	</div>
 </div>
+<% elsif current_user.user_type == 2%>
+	<h1 class="text-center">Welcome, Franchise Owner</h1>
+<% elsif current_user.user_type == 3 %>
+	<h1>Welcome, Chef <%= current_user.fname%> <%= current_user.lname%></h1>
+	
+	<div class="text-center">
+		<%= link_to "Create Meal", new_meal_path, :class => "btn btn-primary" %>
+	</div>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Description</td>
+				<td>Calories</td>
+				<td>Price</td>
+				<td>Edit</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% Meal.all.each do |meals|%>
+			<tr>
+				<td><%= meals.name%></td>
+				<td><%= meals.description%></td>
+				<td><%= meals.calories%></td>
+				<td><%= meals.price %></td>
+				<td><%= link_to "Edit Meal", edit_meal_path(meals), :class => "btn btn-primary"%></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
 <% elsif current_user.user_type == 4 %>
 	<h1 class="text-center">Hello, Admin <%= current_user.fname%> <%= current_user.lname %></h1>
 	
