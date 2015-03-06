@@ -48,3 +48,4 @@ gem 'bootstrap-sass'
 gem 'rails_layout'
 
 gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
