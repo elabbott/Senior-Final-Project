@@ -7,6 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Child.delete_all
 School.delete_all
+User.delete_all
+
+User.create!(
+    email: "jkbenoit@valdosta.edu",
+    password: "123123123",
+    fname: "Jacob",
+    lname: "Benoit",
+    dob: '06/02/1992',
+    address: "102 Starky Place",
+    user_type: 4
+)
 
 School.create!(
     name: "Valdosta Elementary",
