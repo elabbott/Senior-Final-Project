@@ -22,13 +22,26 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-    @meal.save
-    redirect_to homepages_url
+    respond_to do |format|
+      if @meal.save
+        format.html { redirect_to homepages_url, notice: 'Meal was created successfully!' }
+      else
+        format.html {render :new }
+        format.json { render json: @meal.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
     @meal.update(meal_params)
-    redirect_to homepages_url
+    respond_to do |format|
+      if @meal.save
+        format.html { redirect_to homepages_url, notice: 'Meal was created successfully!' }
+      else
+        format.html {render :edit }
+        format.json { render json: @meal.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
