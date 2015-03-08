@@ -1,0 +1,101 @@
+commit e732e57262029078d6dbbdf9a1561e62f5d14a20
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 8 19:16:54 2015 -0400
+
+    fixed modals
+
+commit e02511ddf9e224e549b9f2b4c2975b82c7162cbd
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 8 18:44:34 2015 -0400
+
+    test
+
+commit 260bef52976c9d42b57f071d0e31fa1b3c8790d1
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Sun Mar 8 16:33:56 2015 -0400
+
+    added navbar link and validation for chefs
+
+commit 998bf06e0de45d3b28edc4e70216fac8c6acced4
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Fri Mar 6 15:18:43 2015 -0500
+
+    added in chefs and functionality
+
+commit dfdf43320bb2ba19b90a2227ba542d46c7b100b1
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Fri Mar 6 13:02:32 2015 -0500
+
+    fixed admin stuff mostly
+
+commit 667881f6bdf9c4014fba77a777f1de0cdfff2034
+Author: jacob <jkb6292@gmail.com>
+Date:   Fri Mar 6 10:52:47 2015 -0500
+
+    made admins work sorta
+
+commit e458d9b405c6fbbb2c6fbac968f74816b3ad6bb5
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Thu Mar 5 16:14:13 2015 -0500
+
+    closer to working partial
+
+commit 71e6fb7ac4468c17597e6772c06c28af9b826960
+Author: jacob <jkb6292@gmail.com>
+Date:   Wed Mar 4 23:40:16 2015 -0500
+
+    got some more functionality on the homepage - need to fix school ids
+
+commit 993ee2ed000ef90b78a4ccee6b6bdf6a871d5892
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 19:29:29 2015 -0500
+
+    added limited homepage functionality
+
+commit 1efccf6ca46ec0f89a08602092b24bc93875b3b7
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 18:26:57 2015 -0500
+
+    added franchises
+
+commit 757d610ec49a1aac54709356fec583a66c30a94d
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 18:00:40 2015 -0500
+
+    Fixed user registration
+
+commit a7ca87d2380b066043c7e8b72fe045faa029f719
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 16:32:29 2015 -0500
+
+    added fields to reg, added seeds to db
+
+commit 96fe873c6a0ef191200c1a248198e2593692c38a
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 15:41:04 2015 -0500
+
+    added db tables, changing reg now
+
+commit 6f48971cc27f6faf826edb7e90956c2edfee1978
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 14:04:49 2015 -0500
+
+    fixed the homepage up, still needs css
+
+commit c472a68536d8d5031bc18ca4f0997d4c4bc596f8
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 13:05:11 2015 -0500
+
+    added bootstrap
+
+commit 5b8c9c9b2f4c235b300d89cb4e00ea875bbff31d
+Author: jacob <jkb6292@gmail.com>
+Date:   Tue Mar 3 15:17:38 2015 -0500
+
+    made devise work
+
+commit 035553f305e9122ab27ccfaabc70af4d2988ec91
+Author: jacob <jkb6292@gmail.com>
+Date:   Tue Mar 3 14:37:09 2015 -0500
+
+    Created project
