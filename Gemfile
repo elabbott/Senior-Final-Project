@@ -4,8 +4,9 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
+group :development do
+  gem 'sqlite3', '1.3.8'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -49,3 +50,8 @@ gem 'rails_layout'
 
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
