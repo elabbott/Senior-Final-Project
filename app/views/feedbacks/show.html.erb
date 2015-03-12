@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>F type:</strong>
+  <%= @feedback.f_type %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @feedback.title %>
+</p>
+
+<p>
+  <strong>Descr:</strong>
+  <%= @feedback.descr %>
+</p>
+
+<p>
+  <strong>Date submitted:</strong>
+  <%= @feedback.date_submitted %>
+</p>
+
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Back', feedbacks_path %>

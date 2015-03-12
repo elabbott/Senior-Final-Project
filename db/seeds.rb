@@ -16,7 +16,7 @@ User.create!(
     fname: "Jacob",
     lname: "Benoit",
     dob: '06/02/1992',
-    address: "102 Starky Place",
+    zipcode: 31601,
     user_type: 4
 )
 
@@ -26,19 +26,19 @@ User.create!(
     fname: "Eric",
     lname: "Abbott",
     dob: '01/13/1993',
-    address: "2111 N Oak St",
+    zipcode: 31602,
     user_type: 3
 )
 
 School.create!(
     name: "Valdosta Elementary",
-    address: "200 Oak Street",
+    zipcode: 31601,
     school_id: 1
  )
 
 School.create!(
     name: "Valdosta Middle",
-    address: "201 Oak Street",
+    zipcode: 31602,
     school_id: 2
  )
 

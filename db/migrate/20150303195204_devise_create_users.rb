@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.text :fname
       t.text :lname
       t.date :dob
-      t.text :address
+      t.integer :zipcode
       t.integer :user_type
       
       ## Recoverable

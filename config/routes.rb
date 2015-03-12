@@ -1,4 +1,10 @@
 Yummytummies::Application.routes.draw do
+  resources :payment_infos
+
+  resources :feedbacks
+
+  resources :orders
+
   resources :meals
 
   devise_for :admin_users, ActiveAdmin::Devise.config

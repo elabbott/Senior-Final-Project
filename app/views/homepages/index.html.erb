@@ -16,7 +16,7 @@
 					<thead>
 						<tr>
 							<th>School</th>
-							<th>Address</th>
+							<th>Zipcode</th>
 							<th>School ID</th>
 							<th>Select</th>
 						</tr>
@@ -25,7 +25,7 @@
 						<% School.all.each do |schools| %>
 						<tr>
 							<td><%= schools.name %></td>
-							<td><%= schools.address%></td>
+							<td><%= schools.zipcode%></td>
 							<td><%= schools.school_id %></td>
 							<td><%= button_to 'Display Data', '#', 'data-target' => "#myModal_#{schools.school_id}",:method => :get, 'data-toggle' => 'modal',:class => 'btn btn-primary btn-block' %>
 								<div class="modal fade" id='<%= "myModal_#{schools.school_id}" %>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
