@@ -2,7 +2,6 @@ class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
-
   def index
     @schools = School.all
     respond_with(@schools)
@@ -36,12 +35,28 @@ class SchoolsController < ApplicationController
     respond_with(@school)
   end
 
-  private
-    def set_school
-      @school = School.find(params[:id])
+  def add_children
+    @children = Child.find(params[:school][:student_id]) rescue nil
+   
+      @children.each do |child|
+        child.update_attributes(:user_id => current_user.id)
+      
     end
 
-    def school_params
-      params.require(:school).permit(:name, :address, :school_id, :user_id, :int[], :meal_id, :int[])
+    respond_to do |format|
+
+      format.html { redirect_to homepages_url, notice: 'Children assigned successfully!' }
+
     end
+  end
+
+  private
+
+  def set_school
+    @school = School.find(params[:id])
+  end
+
+  def school_params
+    params.require(:school).permit(:name, :address, :school_id, :user_id, :int[], :meal_id, :int[])
+  end
 end

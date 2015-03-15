@@ -1,39 +1,46 @@
-<h1>Listing schools</h1>
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+<% if current_user.user_type == 1 %>
 
-<table>
-  <thead>
-    <tr>
-      <th> name</th>
-      <th>Address</th>
-      <th>School</th>
-      <th>User</th>
-      <th>Int[]</th>
-      <th>Meal</th>
-      <th>Int[]</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<%= render :partial => 'add_children_form'%>
 
-  <tbody>
-    <% @schools.each do |school| %>
-      <tr>
-        <td><%= school. name %></td>
-        <td><%= school.address %></td>
-        <td><%= school.school_id %></td>
-        <td><%= school.user_id %></td>
-        <td><%= school.int[] %></td>
-        <td><%= school.meal_id %></td>
-        <td><%= school.int[] %></td>
-        <td><%= link_to 'Show', school %></td>
-        <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<% elsif current_user.user_type == 2%>
+<h1 class="text-center">Welcome, Franchise Owner</h1>
+<% elsif current_user.user_type == 3 %>
+<h1>Welcome, Chef <%= current_user.fname%> <%= current_user.lname%></h1>
+
+<div class="text-center">
+	<%= link_to "Create Meal", new_meal_path, :class => "btn btn-primary" %>
+</div>
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>Calories</td>
+			<td>Price</td>
+			<td>Edit</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% Meal.all.each do |meals|%>
+		<tr>
+			<td><%= meals.name%></td>
+			<td><%= meals.description%></td>
+			<td><%= meals.calories%></td>
+			<td><%= meals.price %></td>
+			<td><%= link_to "Edit Meal", edit_meal_path(meals), :class => "btn btn-primary"%></td>
+		</tr>
+		<% end %>
+	</tbody>
 </table>
 
-<br>
+<% elsif current_user.user_type == 4 %>
+<h1 class="text-center">Hello, Admin <%= current_user.fname%> <%= current_user.lname %></h1>
 
-<%= link_to 'New School', new_school_path %>
+<div class="text-center">
+	<%= link_to "Active Admin Dashboard", admin_dashboard_path, :class => 'btn btn-primary btn-lg'%>
+</div>
+<% end %>
+

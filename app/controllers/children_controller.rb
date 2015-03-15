@@ -31,6 +31,7 @@ class ChildrenController < ApplicationController
     respond_with(@child)
   end
 
+
   def destroy
     @child.destroy
     respond_with(@child)

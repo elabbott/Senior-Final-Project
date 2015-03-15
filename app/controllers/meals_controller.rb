@@ -19,6 +19,28 @@ class MealsController < ApplicationController
 
   def edit
   end
+  
+  def process_add_meal_to_child
+    @child = Child.find_by_id(params[:child])
+    Meal.find(params[:meals][:meal_id]).each do |m|
+      
+      @child.update_attributes(:meal_id => m.id)
+      
+    end
+    
+   
+      
+    respond_to do |format|
+
+      format.html { redirect_to homepages_url, notice: 'Meals assigned successfully!' }
+
+    end
+  end
+  
+  
+  def add_meal_to_child
+    @meals = Meal.all
+  end
 
   def create
     @meal = Meal.new(meal_params)

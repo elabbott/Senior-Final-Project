@@ -1,3 +1,27 @@
+commit a7dba278f927b90077724f8bb6506afbf453de1c
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 15 15:04:04 2015 -0400
+
+    g
+
+commit 0b01f4de929875d7e1a711d366008a24b39cb497
+Author: jacob <jkb6292@gmail.com>
+Date:   Thu Mar 12 18:45:29 2015 -0400
+
+    added feedback, order, paymentinfo scaffold and edited address to be zipcodes
+
+commit 4a0cccbac3a168db837a62954d0255d1a3f95277
+Author: jacob <jkb6292@gmail.com>
+Date:   Wed Mar 11 09:55:57 2015 -0400
+
+    Deploying to heroku
+
+commit 9b2be1b18945be44175565b8984683d1de4390b4
+Author: mnkhusnitdinov <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 8 22:02:21 2015 -0400
+
+    Meals
+
 commit 8bab0c296b162a21c7a7e590a6a6072db08c6f67
 Author: Muzaffar <mnkhusnitdinov@gmail.com>
 Date:   Sun Mar 8 19:32:32 2015 -0400
