@@ -59,8 +59,29 @@
 </div>
 <% elsif current_user.user_type == 2 && current_user.approved == true%>
 	<h1 class="text-center">Welcome, Approved Franchise Owner</h1>
+
+
 <% elsif current_user.user_type == 2 && current_user.approved == false%>
 	<h1 class="text-center">Welcome, Unapproved Franchise Owner</h1>
+		<div class="text-center">
+		Schools in your zipcode.
+	</div>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<td>Name</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% School.where(:zipcode => @zipcode) do |schools|%>
+			<tr>
+				<td><%= schools.name%></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+
 <% elsif current_user.user_type == 3 %>
 	<h1>Welcome, Chef <%= current_user.fname%> <%= current_user.lname%></h1>
 	
