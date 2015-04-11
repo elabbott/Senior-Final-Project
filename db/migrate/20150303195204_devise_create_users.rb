@@ -14,6 +14,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.text :lname
       t.date :dob
       t.integer :zipcode
+      t.boolean :franchise
+      t.boolean :approved
       t.integer :user_type
       
       ## Recoverable

@@ -57,8 +57,10 @@
 		</div>
 	</div>
 </div>
-<% elsif current_user.user_type == 2%>
-	<h1 class="text-center">Welcome, Franchise Owner</h1>
+<% elsif current_user.user_type == 2 && current_user.approved == true%>
+	<h1 class="text-center">Welcome, Approved Franchise Owner</h1>
+<% elsif current_user.user_type == 2 && current_user.approved == false%>
+	<h1 class="text-center">Welcome, Unapproved Franchise Owner</h1>
 <% elsif current_user.user_type == 3 %>
 	<h1>Welcome, Chef <%= current_user.fname%> <%= current_user.lname%></h1>
 	

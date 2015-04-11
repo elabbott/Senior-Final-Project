@@ -104,6 +104,8 @@ ActiveRecord::Schema.define(version: 20150312222525) do
     t.text     "lname"
     t.date     "dob"
     t.integer  "zipcode"
+    t.boolean  "franchise"
+    t.boolean  "approved"
     t.integer  "user_type"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
