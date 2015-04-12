@@ -66,6 +66,21 @@
 		<div class="text-center">
 		<%= link_to "Request Franchise", new_franchise_path, :class => "btn btn-primary" %>
 		</div>
+		<table class="table table-striped table-bordered">
+		<thead>
+		Schools in your zipcode.
+			<tr>
+				<td>Name</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% School.where(:zipcode => current_user.zipcode).each do |schools|%>
+			<tr>
+				<td><%= schools.name%></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 
 
 <% elsif current_user.user_type == 3 %>

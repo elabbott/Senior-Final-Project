@@ -22,6 +22,8 @@ class FranchisesController < ApplicationController
 
   def create
     @franchise = Franchise.new(franchise_params)
+    resource.update_attributes(:approved => false)
+    resource.update_attributes(:zipcode => current_user.zipcode)
     @franchise.save
     respond_with(@franchise)
   end
