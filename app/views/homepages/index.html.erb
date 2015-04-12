@@ -27,6 +27,11 @@
 			<%end%>
 		</tbody>
 	</table>
+	
+	<strong>Thrilled with our service? Or have a complaint? Click here to give any kind of feedback!</strong>
+	<div class="text-center">
+		<%= link_to "Feedback", new_feedback_path, :class => "btn btn-primary"%>	
+	</div>
 </div>
 <% elsif current_user.user_type == 3 %>
 	<h1>Welcome, Chef <%= current_user.fname%> <%= current_user.lname%></h1>
