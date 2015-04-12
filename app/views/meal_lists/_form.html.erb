@@ -1,0 +1,25 @@
+<%= form_for(@meal_list) do |f| %>
+  <% if @meal_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meal_list.errors.count, "error") %> prohibited this meal_list from being saved:</h2>
+
+      <ul>
+      <% @meal_list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :meal_id %><br>
+    <%= f.number_field :meal_id %>
+  </div>
+  <div class="field">
+    <%= f.label :franchise_id %><br>
+    <%= f.number_field :franchise_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

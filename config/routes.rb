@@ -1,4 +1,6 @@
 Yummytummies::Application.routes.draw do
+  resources :meal_lists
+
   resources :payment_infos
 
   resources :feedbacks
