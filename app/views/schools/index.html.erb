@@ -1,31 +1,31 @@
+<% if current_user.user_type == 1 %>
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<%= render :partial => 'add_children_form'%>
+<% elsif current_user.user_type == 4 %>
+
 <h1>Listing schools</h1>
 
 <table>
   <thead>
     <tr>
-      <th> name</th>
-      <th>Address</th>
+      <th>Name</th>
+      <th>Zipcode</th>
       <th>School</th>
-      <th>User</th>
-      <th>Int[]</th>
-      <th>Meal</th>
-      <th>Int[]</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>User ID</th>
+      <th>Meal Id/th>
     </tr>
   </thead>
 
   <tbody>
     <% @schools.each do |school| %>
       <tr>
-        <td><%= school. name %></td>
-        <td><%= school.address %></td>
-        <td><%= school.school_id %></td>
+        <td><%= school.name %></td>
+        <td><%= school.zipcode %></td>
         <td><%= school.user_id %></td>
-        <td><%= school.int[] %></td>
         <td><%= school.meal_id %></td>
-        <td><%= school.int[] %></td>
         <td><%= link_to 'Show', school %></td>
         <td><%= link_to 'Edit', edit_school_path(school) %></td>
         <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -38,3 +38,4 @@
 
 <%= link_to 'New School', new_school_path %>
 <%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
+<% end %>
