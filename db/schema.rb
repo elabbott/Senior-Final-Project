@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312222525) do
+ActiveRecord::Schema.define(version: 20150412190651) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -47,16 +47,22 @@ ActiveRecord::Schema.define(version: 20150312222525) do
   end
 
   create_table "franchises", force: true do |t|
-    t.string   "email"
-    t.string   "encrypted_password"
-    t.integer  "zipcode"
     t.integer  "school_id"
-    t.boolean  "approved"
+    t.integer  "user_id"
+    t.integer  "zipcode"
+    t.boolean  "approved",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "homepages", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meal_lists", force: true do |t|
+    t.integer  "meal_id"
+    t.integer  "franchise_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,9 +97,9 @@ ActiveRecord::Schema.define(version: 20150312222525) do
   create_table "schools", force: true do |t|
     t.text     "name"
     t.integer  "zipcode"
-    t.integer  "school_id"
     t.integer  "user_id"
     t.integer  "meal_id"
+    t.integer  "school_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

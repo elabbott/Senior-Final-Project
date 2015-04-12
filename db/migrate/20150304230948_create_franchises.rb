@@ -1,10 +1,10 @@
 class CreateFranchises < ActiveRecord::Migration
   def change
     create_table :franchises do |t|
-      t.integer :zipcode
       t.integer :school_id
       t.integer :user_id
-      t.boolean :approved
+      t.integer :zipcode
+      t.boolean :approved, default: false
       t.timestamps
     end
   end

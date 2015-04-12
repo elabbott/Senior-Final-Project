@@ -86,6 +86,9 @@ def cancel
 expire_data_after_sign_in!
 redirect_to new_registration_path(resource_name)
 end
+def approve
+    resource.update_attributes(:approved => true)
+end
 protected
 def update_needs_confirmation?(resource, previous)
 resource.respond_to?(:pending_reconfirmation?) &&

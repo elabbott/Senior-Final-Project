@@ -59,7 +59,26 @@
 </div>
 <% elsif current_user.user_type == 2 && current_user.approved == true%>
 	<h1 class="text-center">Welcome, <%= current_user.fname %> <%= current_user.lname %>.</h1>
-
+		<table class="table table-striped table-bordered">
+		<thead>
+		Your franchise list.
+			<tr>
+				<td>ID</td>
+				<td>School ID</td>
+				<td>Approved</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% Franchise.where(:user_id => current_user.id).each do |franchises|%>
+			<tr>
+				<td><%= franchises.id%></td>
+				<td><%= franchises.school_id%></td>
+				<td><%= franchises.approved%></td>
+				<td><%= link_to "View Franchise Page", franchise, :class => "btn btn-primary" %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 
 <% elsif current_user.user_type == 2 && current_user.approved == false%>
 	<h1 class="text-center">Welcome, Unapproved Franchise Owner: <%= current_user.fname %> <%= current_user.lname %>.</h1>
@@ -123,12 +142,16 @@
 		Franchises Owners that need approval.
 			<tr>
 				<td>Name</td>
+				<td>Zipcode</td>
+				<td>email</td>
 			</tr>
 		</thead>
 		<tbody>
 			<% User.where(:approved => false).each do |users|%>
 			<tr>
-				<td><%= users.name%></td>
+				<td><%= users.fname%>, <%= users.lname%></td>
+				<td><%= users.zipcode %></td>
+				<td><%= users.email%></td>
 				<td><%= button_to 'Approve'  %> </td>
 			</tr>
 			<% end %>
@@ -138,18 +161,18 @@
 		<thead>
 		Franchises that need approval.
 			<tr>
-				<td>Owner Name</td>
-				<td>School Connected</td>
+				<td>Owner ID</td>
+				<td>School ID</td>
 				<td>Zipcode</td>
 			</tr>
 		</thead>
 		<tbody>
-			<% Franchise.where(:approved => false).each do |franchises|%>
+			<% Franchise.where(:approved => false ).each do |franchises|%> <!-- not quite perfect still shows unapproved users -->
 			<tr>
-				<td><%= User.fname.where(franchises.user_id => User.id) %>, <%= User.lname.where(franchises.user_id => User.id) %></td>
-				<td><%= School.name.where(franchises.school_id => School.id) %></td>
+				<td><%= franchises.user_id %></td>
+				<td><%= franchises.school_id %></td>
 				<td><%= franchises.zipcode %></td>
-				<td><%= button_to 'Approve'  %> </td>
+				<td><%= button_to 'Approve' %> </td>
 			</tr>
 			<% end %>
 		</tbody>

@@ -21,9 +21,10 @@ class FranchisesController < ApplicationController
   end
 
   def create
+
     @franchise = Franchise.new(franchise_params)
-    resource.update_attributes(:approved => false)
-    resource.update_attributes(:zipcode => current_user.zipcode)
+    @franchise.user_id = current_user.id
+    @franchise.zipcode = current_user.zipcode
     @franchise.save
     respond_with(@franchise)
   end
@@ -36,6 +37,9 @@ class FranchisesController < ApplicationController
   def destroy
     @franchise.destroy
     respond_with(@franchise)
+  end
+  def approve
+    @franchise.approve = true
   end
 
   private
