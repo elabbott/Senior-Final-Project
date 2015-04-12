@@ -4,12 +4,14 @@
 		Schools in your zipcode.
 			<tr>
 				<td>Name</td>
+				<td>ID</td>
 			</tr>
 		</thead>
 		<tbody>
 			<% School.where(:zipcode => current_user.zipcode).each do |schools|%>
 			<tr>
 				<td><%= schools.name%></td>
+				<td><%= schools.id%></td>
 			</tr>
 			<% end %>
 		</tbody>
