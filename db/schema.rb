@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150312222525) do
     t.string   "encrypted_password"
     t.integer  "zipcode"
     t.integer  "school_id"
+    t.boolean  "approved"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
