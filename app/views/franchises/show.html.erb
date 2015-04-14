@@ -1,29 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @franchise.email %>
+  <strong>ID:</strong>
+  <%= @franchise.id %>
 </p>
 
 <p>
-  <strong>Encrypted password:</strong>
-  <%= @franchise.encrypted_password %>
+  <strong>Owner id:</strong>
+  <%= @franchise.user_id %>
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @franchise.address %>
-</p>
-
-<p>
-  <strong>Fid:</strong>
-  <%= @franchise.fid %>
-</p>
-
-<p>
-  <strong>School:</strong>
+  <strong>School id:</strong>
   <%= @franchise.school_id %>
 </p>
 
-<%= link_to 'Edit', edit_franchise_path(@franchise) %> |
-<%= link_to 'Back', franchises_path %>
+<%= link_to 'Edit', edit_franchise_path(@franchise), :class => "btn btn-primary" %> |
+<%= link_to 'Home Page', authenticated_root_path, :class => "btn btn-primary" %>

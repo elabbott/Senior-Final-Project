@@ -3,11 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Email</th>
-      <th>Encrypted password</th>
-      <th>Address</th>
-      <th>Fid</th>
-      <th>School</th>
+      <th>ID</th>
+      <th>Owner ID</th>
+      <th>School ID</th>
+      <th>Approved</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,11 +16,11 @@
   <tbody>
     <% @franchises.each do |franchise| %>
       <tr>
-        <td><%= franchise.email %></td>
-        <td><%= franchise.encrypted_password %></td>
-        <td><%= franchise.address %></td>
-        <td><%= franchise.fid %></td>
+        
+        <td><%= franchise.id %></td>
+        <td><%= franchise.user_id %></td>
         <td><%= franchise.school_id %></td>
+        <td><%= franchise.approved %></td>
         <td><%= link_to 'Show', franchise %></td>
         <td><%= link_to 'Edit', edit_franchise_path(franchise) %></td>
         <td><%= link_to 'Destroy', franchise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,3 +33,4 @@
 
 <%= link_to 'New Franchise', new_franchise_path %>
 <%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
+

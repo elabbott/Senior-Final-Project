@@ -14,7 +14,13 @@ end
 # POST /resource
 def create
 build_resource(sign_up_params)
-resource.update_attributes(:user_type => 1)
+if @franchise
+resource.update_attributes(:user_type => 1)	
+resource.update_attributes(:approved => true)
+else
+resource.update_attributes(:user_type => 2)
+resource.update_attributes(:approved => false)
+end
 resource_saved = resource.save
 yield resource if block_given?
 if resource_saved
@@ -79,6 +85,9 @@ end
 def cancel
 expire_data_after_sign_in!
 redirect_to new_registration_path(resource_name)
+end
+def approve
+    resource.update_attributes(:approved => true)
 end
 protected
 def update_needs_confirmation?(resource, previous)
