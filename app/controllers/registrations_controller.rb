@@ -14,10 +14,10 @@ end
 # POST /resource
 def create
 build_resource(sign_up_params)
-if @franchise == 1
+if @franchise = 1
 resource.update_attributes(:user_type => 2)
 resource.update_attributes(:approved => false)
-elsif @franchise == 0
+elsif @franchise = 0
 resource.update_attributes(:user_type => 1)
 end
 resource_saved = resource.save
