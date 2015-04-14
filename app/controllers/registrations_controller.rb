@@ -15,11 +15,11 @@ end
 def create
 build_resource(sign_up_params)
 if @franchise
-resource.update_attributes(:user_type => 1)	
-resource.update_attributes(:approved => true)
+  resource.update_attributes(:user_type => 1)	
+  resource.update_attributes(:approved => true)
 else
-resource.update_attributes(:user_type => 2)
-resource.update_attributes(:approved => false)
+  resource.update_attributes(:user_type => 2)
+  resource.update_attributes(:approved => false)
 end
 resource_saved = resource.save
 yield resource if block_given?
