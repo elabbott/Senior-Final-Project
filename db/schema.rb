@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 20150412190651) do
     t.integer  "zipcode"
     t.boolean  "franchise"
     t.boolean  "approved"
-    t.integer  "user_type", default: 1
+    t.integer  "user_type"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
