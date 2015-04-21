@@ -2,6 +2,7 @@ class FeedbacksController < InheritedResources::Base
 
     def create
     @feedback = Feedback.new(feedback_params)
+    @feedback.date_submitted = Date.today
     respond_to do |format|
       if @feedback.save
         format.html { redirect_to homepages_url, notice: 'Feedback submitted!' }
