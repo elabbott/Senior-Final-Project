@@ -1,0 +1,27 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<h1>Feedback submitted by <%= current_user.fname%> <%= current_user.lname %>: </h1>
+
+<br/>
+<br/>
+
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Date Submitted</th>
+			<th>View</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<% Feedback.where(:f_type => current_user.id).each do |fb| %>
+				<td><%= fb.title %></td>
+				<td><%= fb.date_submitted%></td>
+				<td><%= button_to 'View', fb, :method => :get, :class => "btn btn-primary btn-block"%></td></td>
+			<% end %>
+		</tr>
+	</tbody>
+</table>

@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>F type:</strong>
-  <%= @feedback.f_type %>
-</p>
-
-<p>
   <strong>Title:</strong>
   <%= @feedback.title %>
 </p>
@@ -20,5 +15,4 @@
   <%= @feedback.date_submitted %>
 </p>
 
-<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
-<%= link_to 'Back', feedbacks_path %>
+<%= link_to 'Back', authenticated_root_path %>
