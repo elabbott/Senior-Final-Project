@@ -81,6 +81,7 @@ GEM
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
+    high_voltage (2.2.1)
     hike (1.2.3)
     i18n (0.7.0)
     inherited_resources (1.6.0)
@@ -190,6 +191,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 4.0.0)
   devise
+  high_voltage
   jbuilder (~> 1.2)
   jquery-rails
   pg (= 0.15.1)

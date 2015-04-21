@@ -9,15 +9,17 @@
         <span class="icon-bar"></span>
       </button>
       <ul class="nav navbar-nav navbar-right">
-			<li>
-				<%= link_to "Home", authenticated_root_path %>
-			</li>
-			<li >
-				<%= link_to "Log Out", destroy_user_session_path, :method => :delete%>
-			</li>
-			<li>
-				<%= link_to "Edit Account", edit_user_registration_path %>
-			</li>
+				<div class='navbar-brand'>Welcome, <%= current_user.fname %> <%= current_user.lname %></div>
+				<%= link_to "Home", authenticated_root_path, class: 'navbar-brand' %>
+				<%= link_to "Edit Account", edit_user_registration_path, class: 'navbar-brand' %>
+				<% if current_user.user_type == 2 && current_user.franchise == false %>
+					<%= link_to 'Feedback', page_path('feedback'), class: 'navbar-brand' %>
+					<%= link_to 'Orders', page_path('orders'), class: 'navbar-brand' %>
+				<% elsif current_user.user_type == 2 && current_user.franchise == true %>
+					<%= link_to 'Meal Lists', page_path('meal_lists'), class: 'navbar-brand' %>
+					<%= link_to 'Money', page_path('money'), class: 'navbar-brand' %>
+				<% end %>
+				<%= link_to "Log Out", destroy_user_session_path, :method => :delete, class: 'navbar-brand'%>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
