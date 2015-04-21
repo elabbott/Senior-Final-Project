@@ -1,39 +1,28 @@
-<p id="notice"><%= notice %></p>
+<% if current_user.user_type == 2 %>
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+<h2>Children who attend <%= @school.name%> School:</h2>
 
-<p>
-  <strong> name:</strong>
-  <%= @school. name %>
-</p>
+<%= form_tag(add_children_path) do %>
+<br/>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Child Name</th>
+			<th>Select Child</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% Child.where(:school_id => @school.id).each do |children| %>
+		<tr>
+			<td><%= children.name%></td>
+			<td><%= check_box_tag 'school[student_id][]', children.id, false %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
 
-<p>
-  <strong>Address:</strong>
-  <%= @school.address %>
-</p>
-
-<p>
-  <strong>School:</strong>
-  <%= @school.school_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @school.user_id %>
-</p>
-
-<p>
-  <strong>Int[]:</strong>
-  <%= @school.int[] %>
-</p>
-
-<p>
-  <strong>Meal:</strong>
-  <%= @school.meal_id %>
-</p>
-
-<p>
-  <strong>Int[]:</strong>
-  <%= @school.int[] %>
-</p>
-
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+<%= submit_tag 'Submit'%>
+<% end %>
+<% end %>

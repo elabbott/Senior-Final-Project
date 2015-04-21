@@ -3,16 +3,34 @@
 </header>
 <% if current_user.franchise == false && current_user.user_type == 2 %>
 
-<%= button_to "Select Child", schools_path, method: :get%>
+
 
 <h1 class="text-center">Welcome, <%= current_user.fname %> <%= current_user.lname %></h1>
+
+<br/>
+<br/>
+<table>
+	<thead>
+		<tr>
+			<th><strong>Click here to select your Child: </strong></th>
+			<th class="text-right"><strong>Click here to give Feedback: </strong></br></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= button_to "Select Child", schools_path, method: :get, :class => "btn btn-primary"%></td>
+			<td class="text-right"><%= link_to "Feedback", new_feedback_path, :class => "btn btn-primary"%></td>
+		</tr>
+	</tbody>
+</table>
+
 <div>
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>
 				<th>Name</th>
 				<th>School</th>
-				<th>Meal COntrol</th>
+				<th>Meal Control</th>
 
 			</tr>
 		</thead>
@@ -28,10 +46,7 @@
 		</tbody>
 	</table>
 	
-	<strong>Thrilled with our service? Or have a complaint? Click here to give any kind of feedback!</strong>
-	<div class="text-center">
-		<%= link_to "Feedback", new_feedback_path, :class => "btn btn-primary"%>	
-	</div>
+	
 </div>
 <% elsif current_user.user_type == 2 && current_user.approved == true%>
 	<h1 class="text-center">Welcome, <%= current_user.fname %> <%= current_user.lname %>.</h1>

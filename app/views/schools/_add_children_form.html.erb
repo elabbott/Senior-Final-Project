@@ -1,54 +1,26 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
 
+<h1>Schools in your Area:</h1>
 
-<h1 class="text-center">Welcome, <%= current_user.fname %> <%= current_user.lname %></h1>
-<%= form_tag(add_children_path) do%>
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-	<% School.all.each do |schools| %>
-
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				<th>School</th>
-				<th>Zipcode</th>
-				<th>School ID</th>
-				<th>Select</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><%= schools.name %></td>
-				<td><%= schools.zipcode%></td>
-				<td><%= schools.school_id %></td>
-				<td>
-				<table class="table table-striped table-bordered">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>School Id</th>
-							<th>Select Child</th>
-						</tr>
-					</thead>
-					<tbody>
-						<% Child.where(:school_id => schools.id).each do |c| %>
-						<tr>
-							<td><%= c.name %></td>
-							<td><%= c.school_id %></td>
-							<td><%= check_box_tag 'school[student_id][]', c.id, false %></td>
-
-						</tr>
-						<% end %>
-					</tbody>
-				</table></td>
-			</tr>
-
-		</tbody>
-	</table>
-	<% end %>
-						<%= submit_tag 'Submit' %>
-
-</div>
-
-<%end%>
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>School Name</th>
+			<th>Zipcode</th>
+			<th>Display Students</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% School.where(:zipcode => current_user.zipcode).each do |schools| %>
+		<tr>
+			<td><%= schools.name%></td>
+			<td><%= schools.zipcode%></td>
+			<td><%= link_to 'Display Students', schools, :class => "btn btn-primary btn-block" %></td>
+		</tr>
+		<% end %>
+	</tbody>
 
 
 

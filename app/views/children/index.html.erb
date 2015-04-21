@@ -1,3 +1,10 @@
+<% if current_user.user_type == 2 %>
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<%= render :partial => 'add_children2_form'%>
+<% elsif current_user.user_type == 4 %>
 <h1>Listing children</h1>
 
 <table>
@@ -32,3 +39,4 @@
 
 <%= link_to 'New Child', new_child_path %>
 <%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
+<% end %>
