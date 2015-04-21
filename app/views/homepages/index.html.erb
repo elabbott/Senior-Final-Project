@@ -1,3 +1,9 @@
+<script>
+	$(document).ready(function() {
+		$('.table').DataTable({});
+	})
+</script>
+
 <header>
 	<%= render 'layouts/navigation' %>
 </header>
@@ -76,6 +82,7 @@
 			<% end %>
 		</tbody>
 	</table>
+
 
 <% elsif current_user.user_type == 3 %>
 	<h1>Welcome, Chef <%= current_user.fname%> <%= current_user.lname%></h1>
