@@ -30,30 +30,58 @@
 	</tbody>
 </table>
 
-<div>
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>School</th>
-				<th>Meal Control</th>
+<table>
 
-			</tr>
-		</thead>
-		<tbody>
-			<%Child.where(:user_id => current_user.id).each do |child|%>
-			<tr>
-				<td><%= child.name%></td>
-				<td><%= School.find_by_id(child.school_id).name%></td>
-				<td><%= button_to "Add Meal", add_meal_to_child_path(child.id), method: :get%></td>
-
-			</tr>
-			<%end%>
-		</tbody>
-	</table>
-	
-	
-</div>
+<tbody>
+	<tr>
+		<td>
+			<div>
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>School</th>
+							<th>Meal Control</th>
+			
+						</tr>
+					</thead>
+					<tbody>
+						<%Child.where(:user_id => current_user.id).each do |child|%>
+						<tr>
+							<td><%= child.name%></td>
+							<td><%= School.find_by_id(child.school_id).name%></td>
+							<td><%= button_to "Add Meal", add_meal_to_child_path(child.id), method: :get%></td>
+			
+						</tr>
+						<%end%>
+					</tbody>
+				</table>
+				
+			</div>
+		</td>
+		<td>
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Meal</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<%= Order.where(:id => current_user.id).each do |m| %>
+							<%= Meal.where(:id => m.id).each do |meals| %>
+								<td>meals.name</td>
+								<td>meals.price</td>
+							<% end %>
+						<% end %>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+</tbody>
+</table>
 <% elsif current_user.user_type == 2 && current_user.approved == true%>
 	<h1 class="text-center">Welcome, <%= current_user.fname %> <%= current_user.lname %>.</h1>
 		<table class="table table-striped table-bordered">
