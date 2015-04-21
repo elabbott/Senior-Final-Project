@@ -47,16 +47,4 @@
       </div>
     </div>
   </div>
-
-<div class="authform">
-
-  <div class="form-group">
-    <%= f.label :school_id, "Please input the school's ID" %><br>
-    <%= f.number_field :school_id, class: 'form-control' %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Create Franchise', :class => 'button left' %>
-	<%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
-  </div>
- </div>
 <% end %>

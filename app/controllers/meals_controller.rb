@@ -27,8 +27,6 @@ class MealsController < ApplicationController
       @child.update_attributes(:meal_id => m.id)
       
     end
-    
-   
       
     respond_to do |format|
 
