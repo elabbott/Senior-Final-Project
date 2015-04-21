@@ -48,6 +48,8 @@ end
 gem 'bootstrap-sass'
 gem 'rails_layout'
 
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 
