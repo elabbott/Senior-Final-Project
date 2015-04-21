@@ -23,6 +23,7 @@ class FranchisesController < ApplicationController
   def create
 
     @franchise = Franchise.new(franchise_params)
+    #@franchise.school_id = Franchise.find(params[:school_id])
     @franchise.user_id = current_user.id
     @franchise.zipcode = current_user.zipcode
     @franchise.save
@@ -41,6 +42,9 @@ class FranchisesController < ApplicationController
   def approve
     @franchise.approve = true
   end
+
+
+
 
   private
     def set_franchise
