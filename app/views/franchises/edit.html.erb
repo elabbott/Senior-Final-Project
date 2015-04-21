@@ -1,6 +1,29 @@
 <h1>Editing franchise</h1>
-
+<% if current_user.user_type != 4 %>
 <%= render 'form' %>
+<% end %>
+<% if current_user.user_type == 4 %>
+<%= form_for(@franchise) do |f| %>
+  <% if @franchise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@franchise.errors.count, "error") %> prohibited this line_item from being saved:</h2>
 
-<%= link_to 'Show', @franchise %> |
+      <ul>
+      <% @franchise.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="form-group">
+    <%= f.label :approved %><br>
+    <%= f.check_box :approved %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
+  <% end %>	
+<%= link_to 'Show', @franchise %> 
 <%= link_to 'Back', franchises_path %>
