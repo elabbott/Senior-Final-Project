@@ -69,8 +69,10 @@ ActiveRecord::Schema.define(version: 20150422013036) do
 
   create_table "orders", force: true do |t|
     t.decimal  "price"
-    t.integer  "user_id"
+    t.integer  "parent_id"
+    t.integer  "child_id"
     t.integer  "pay_type"
+    t.boolean  "complete"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -97,6 +99,7 @@ ActiveRecord::Schema.define(version: 20150422013036) do
     t.integer  "school_id"
     t.integer  "child_id"
     t.boolean  "paid"
+    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -35,6 +35,30 @@
 
 </table>
 
+<h1>Your incomplete orders</h1>
+<table class="table">
+	<thead>
+		<th>Total</th>
+		<th>Child</th>
+		<th>Pay</th>
+
+	</thead>
+	<tbody>
+		<%Order.where(:parent_id => current_user.id, :complete => false).each do |order|%>
+
+		<tr>
+			<td><%= order.price %></td>
+			<td><%= Child.find_by_id(order.child_id).name %></td>
+			<td><%= button_to "Pay", payment_path(child.id), :method => :get%></td>
+
+
+		</tr>
+		<%end%>
+	</tbody>
+
+</table>
+
+
 # code here...
 
 <% elsif current_user.user_type == 2 && current_user.approved == true%>

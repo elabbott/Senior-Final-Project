@@ -1,9 +1,4 @@
-<script>
 
-$('#hue').click(function(){
-	alert("Yes");
-});
-</script>
 
 <header>
 	<%= render 'layouts/navigation' %>
@@ -30,7 +25,6 @@ $('#hue').click(function(){
 			<td><%= meal.price %></td>
 			<td><%= meal.calories %></td>
 			<td><%= check_box_tag 'meals[meal_id][]', meal.id, false, :class => "hue" %></td>
-
 		</tr>
 		<% end %>
 		  <%= hidden_field_tag 'child_id', Child.find_by_id(params[:id]).id%>
