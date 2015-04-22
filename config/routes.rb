@@ -1,4 +1,6 @@
 Yummytummies::Application.routes.draw do
+  resources :purchase_meals
+
   resources :parent_children
 
   resources :children
@@ -21,9 +23,9 @@ Yummytummies::Application.routes.draw do
 
   resources :homepages
   post "/add_children" , :to => "schools#add_children", :as => 'add_children'
-  get "/add_meal_to_child/:id" , :to => "meals#add_meal_to_child", :as => 'add_meal_to_child'
+  get "/add_meal_to_child/:id" , :to => "purchase_meals#add_meal_to_child", :as => 'add_meal_to_child'
 
-  post "/process_add_meal_to_child" , :to => "meals#process_add_meal_to_child", :as => 'process_add_meal_to_child'
+  post "/process_add_meal_to_child" , :to => "purchase_meals#process_add_meal_to_child", :as => 'process_add_meal_to_child'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

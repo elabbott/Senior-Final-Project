@@ -27,7 +27,7 @@
 			<td><%= child.name %></td>
 			<td><%= child.dob %></td>
 			<td><%= School.find_by_id(child.school_id).name %></td>
-			<td>Button placeholder</td>
+			<td><%= button_to "Purchase meals", add_meal_to_child_path(child.id), :method => :get%></td>
 
 		</tr>
 		<%end%>

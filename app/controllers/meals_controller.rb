@@ -5,7 +5,6 @@ class MealsController < ApplicationController
 
   def index
     @meals = Meal.all
-    respond_with(@meals)
   end
 
   def show
@@ -14,26 +13,12 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new
-    respond_with(@meal)
   end
 
   def edit
   end
   
-  def process_add_meal_to_child
-    @child = Child.find_by_id(params[:child])
-    Meal.find(params[:meals][:meal_id]).each do |m|
-      
-      @child.update_attributes(:meal_id => m.id)
-      
-    end
-      
-    respond_to do |format|
-
-      format.html { redirect_to homepages_url, notice: 'Meals assigned successfully!' }
-
-    end
-  end
+ 
   
   
   def add_meal_to_child
