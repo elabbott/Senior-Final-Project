@@ -3,8 +3,6 @@ Yummytummies::Application.routes.draw do
 
   resources :payment_infos
 
-  resources :feedbacks
-
   resources :orders
 
   resources :meals
@@ -16,8 +14,6 @@ Yummytummies::Application.routes.draw do
   resources :franchises
 
   resources :schools
-
-  resources :children
 
   resources :homepages
   post "/add_children" , :to => "schools#add_children", :as => 'add_children'
