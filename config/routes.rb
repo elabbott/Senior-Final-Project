@@ -1,4 +1,8 @@
 Yummytummies::Application.routes.draw do
+  resources :parent_children
+
+  resources :children
+
   resources :meal_lists
 
   resources :payment_infos
