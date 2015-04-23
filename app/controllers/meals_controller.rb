@@ -5,7 +5,6 @@ class MealsController < ApplicationController
 
   def index
     @meals = Meal.all
-    respond_with(@meals)
   end
 
   def show
@@ -14,7 +13,6 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new
-    respond_with(@meal)
   end
 
   def edit
@@ -33,6 +31,7 @@ class MealsController < ApplicationController
 
     end
   end
+
   
   
   def add_meal_to_child

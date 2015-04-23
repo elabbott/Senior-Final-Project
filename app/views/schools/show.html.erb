@@ -1,6 +1,6 @@
 <script>
 	$(document).ready(function() {
-		$('.table').DataTable({});
+		$('').DataTable({});
 	})
 </script>
 
@@ -39,23 +39,6 @@
       </div>
     </div>
   </div>
-
-<table class="table table-bordered table-striped">
-	<thead>
-		<tr>
-			<th>Child Name</th>
-			<th>Select Child</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% Child.where(:school_id => @school.id).each do |children| %>
-		<tr>
-			<td><%= children.name%></td>
-			<td><%= check_box_tag 'school[student_id][]', children.id, false %></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
 
 <%= submit_tag 'Submit'%>
 <% end %>

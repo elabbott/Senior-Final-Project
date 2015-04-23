@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :c_type %><br>
-    <%= f.number_field :c_type %>
+    <%= f.select :c_type, options_for_select([ "VISA", "MasterCard", "American Express" ], "MasterCard") %>
   </div>
   <div class="field">
     <%= f.label :cnum %><br>
@@ -30,6 +30,8 @@
   <div class="field">
     <%= f.label :cvv %><br>
     <%= f.number_field :cvv %>
+    	<%= hidden_field_tag :order_id, params[:id]  %>
+
   </div>
   <div class="actions">
     <%= f.submit %>

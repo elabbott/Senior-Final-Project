@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<h1>Order Number <%= @order.id %> for <%= current_user.fname%> <%= current_user.lname %></h1>
+
 <p>
   <strong>Price:</strong>
   <%= @order.price %>
@@ -7,7 +13,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @order.user_id %>
+  <%= @order.parent_id %>
 </p>
 
 <p>
@@ -15,5 +21,7 @@
   <%= @order.pay_type %>
 </p>
 
+<%if current_user.user_type == 4 %>
 <%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<% end %>
+<%= link_to 'Back', authenticated_root_path %>

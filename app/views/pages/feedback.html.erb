@@ -1,0 +1,27 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<h1>Feedback submitted by <%= current_user.fname%> <%= current_user.lname %>: </h1>
+
+<br/>
+<br/>
+
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Order Price</th>
+			<th>Feedback Given</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% Order.where(:parent_id => current_user.id).each do |fb| %>
+			<% if fb.feedback != nil %>
+			<tr>
+				<td><%= fb.price %></td>
+				<td><%= fb.feedback%></td>
+			</tr>
+			<% end %>
+		<% end %>
+	</tbody>
+</table>

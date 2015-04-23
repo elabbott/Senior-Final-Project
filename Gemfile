@@ -19,6 +19,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#turbolinks break java this fixes it
+gem 'jquery-turbolinks'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -55,6 +57,8 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'cancan'
 gem 'rolify'
+
+gem 'high_voltage'
 
 group :production do
   gem 'pg', '0.15.1'
