@@ -1,0 +1,35 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+<%= form_tag(process_payment_path) do%>
+<h1>Payment</h1>
+<div class="field">
+	<%= label_tag "Name" %>
+	<br>
+	<%= text_field_tag :name %>
+</div>
+<div class="field">
+	<%= label_tag "Card Type" %>
+	<br>
+	<%= select_tag :c_type,  options_for_select([ "VISA", "MasterCard", "American Express" ], "MasterCard") %>
+</div>
+<div class="field">
+	<%= label_tag "Card Number" %>
+	<br>
+	<%= text_field_tag :cnum %>
+</div>
+<div class="field">
+	<%= label_tag "Expiration Date" %>
+	<br>
+	<%= date_select :expdate, :start_year => Date.current.year %>
+</div>
+<div class="field">
+	<%= label_tag "cvv" %>
+	<br>
+	<%= number_field_tag :cvv  %>
+	<%= hidden_field_tag :order_id, params[:id]  %>
+</div>
+
+<%= submit_tag 'Submit' %>
+
+<%end%>

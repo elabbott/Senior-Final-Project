@@ -12,6 +12,11 @@
 <h1 class="text-center">Welcome, <%= current_user.fname %> <%= current_user.lname %></h1>
 
 <%= button_to "Register my child", new_child_path, :method => :get%>
+<% @orders = Order.where(:parent_id => current_user.id) rescue nil %>
+<%if @orders.count > 0 %>
+<%= button_to "My Order History", orders_path, :method => :get%>
+<%end%>
+
 <br>
 <table class="table">
 	<thead>
@@ -49,7 +54,7 @@
 		<tr>
 			<td><%= order.price %></td>
 			<td><%= Child.find_by_id(order.child_id).name %></td>
-			<td><%= button_to "Pay", payment_path(child.id), :method => :get%></td>
+			<td><%= button_to "Pay", payment_path(order.id), :method => :get%></td>
 
 
 		</tr>

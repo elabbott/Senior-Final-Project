@@ -27,9 +27,13 @@ Yummytummies::Application.routes.draw do
 
   post "/process_add_meal_to_child" , :to => "purchase_meals#process_add_meal_to_child", :as => 'process_add_meal_to_child'
   
-   get "/payment/:id" , :to => "orders#payment", :as => 'payment'
+   get "/payment/:id" , :to => "payment_infos#payment", :as => 'payment'
 
-  post "/process_payment" , :to => "orders#process_payment", :as => 'process_payment'
+  post "/process_payment" , :to => "payment_infos#process_payment", :as => 'process_payment'
+  
+  get "/feedback/:id" , :to => "orders#feedback", :as => 'feedback'
+
+  post "/process_feedback" , :to => "orders#process_feedback", :as => 'process_feedback'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

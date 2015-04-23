@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20150422013036) do
     t.integer  "child_id"
     t.integer  "pay_type"
     t.boolean  "complete"
+    t.boolean  "feedback_flag"
+    t.text     "feedback"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,6 +92,9 @@ ActiveRecord::Schema.define(version: 20150422013036) do
     t.integer  "cnum"
     t.date     "expdate"
     t.integer  "cvv"
+    t.integer  "order_id"
+    t.integer  "parent_id"
+    t.integer  "child_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
