@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <%@schools = School.where(:zipcode => current_user.zipcode)%>
   
   <div class="field">
     <%= f.label :name %><br>
@@ -21,7 +22,7 @@
   </div>
     <div class="field">
     <%= f.label :school_id %><br>
-		<%= f.select(:school_id, options_for_select(School.all.collect {|p| [ p.name, p.id ] }),{}, { :class => 'form-control', :id => 'type_dd'})%>
+		<%= f.select(:school_id, options_for_select(@schools.collect {|p| [ p.name, p.id ] }),{}, { :class => 'form-control', :id => 'type_dd'})%>
   </div>
   <%= f.hidden_field :parent_id, :value => current_user.id%>
 

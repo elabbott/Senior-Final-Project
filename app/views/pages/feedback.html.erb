@@ -11,17 +11,20 @@
 	<thead>
 		<tr>
 			<th>Order Price</th>
-			<th>Feedback Given</th>
+			<th>See/Leave Feedback</th>
 		</tr>
 	</thead>
 	<tbody>
-		<% Order.where(:parent_id => current_user.id).each do |fb| %>
-			<% if fb.feedback != nil %>
-			<tr>
-				<td><%= fb.price %></td>
-				<td><%= fb.feedback%></td>
-			</tr>
+		<% Order.where(:parent_id => current_user.id).each do |order| %>
+		<tr>
+			<td><%= order.price %></td>
+			<%if order.feedback_flag == nil || order.feedback_flag == "false"%>
+			<td><%= button_to "Leave Feedback", feedback_path(order.id), :method => :get%></td>
+			<%else%>
+			<td><%= order.feedback%></td>
+			<%end%>
 			<% end %>
-		<% end %>
+		</tr>
+		
 	</tbody>
 </table>

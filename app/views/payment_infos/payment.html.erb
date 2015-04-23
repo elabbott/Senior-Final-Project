@@ -29,7 +29,11 @@
 	<%= number_field_tag :cvv  %>
 	<%= hidden_field_tag :order_id, params[:id]  %>
 </div>
-
+<div class="field">
+	<%= label_tag "cvv" %>
+	<br>
+	<%= check_box_tag :save  %>
+<div>
 <%= submit_tag 'Submit' %>
 
 <%end%>
