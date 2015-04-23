@@ -39,7 +39,9 @@ class FranchisesController < ApplicationController
 
   def destroy
     @franchise.destroy
-    respond_with(@franchise)
+    respond_to do |format|
+      format.html{redirect_to homepages_url, notice: 'Franchise was deleted'}
+    end
   end
   def approve
     @franchise.approve = true

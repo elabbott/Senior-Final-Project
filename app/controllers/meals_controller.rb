@@ -26,10 +26,7 @@ class MealsController < ApplicationController
       
       @child.update_attributes(:meal_id => m.id)
       
-    end
-    
-   
-      
+    end      
     respond_to do |format|
 
       format.html { redirect_to homepages_url, notice: 'Meals assigned successfully!' }
@@ -53,6 +50,12 @@ class MealsController < ApplicationController
       end
     end
   end
+def process_add_meal_to_franchise
+end
+def add_meal_to_franchise
+    @meals = Meal.all
+  end
+
 
   def update
     @meal.update(meal_params)
