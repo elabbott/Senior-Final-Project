@@ -18,14 +18,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<% Order.where(:parent_id => current_user.id).each do |o| %>
+		<% Order.where(:parent_id => current_user.id).each do |o| %>
+			<tr>
 				<td><%= o.id %></td>
 				<td><%= o.price%></td>
 				<td><%= o.pay_type%></td>
 				<td><%= o.created_at%>
 				<td><%= button_to 'View', o, :method => :get, :class => "btn btn-primary btn-block"%></td></td>
-			<% end %>
-		</tr>
+			</tr>
+		<% end %>
 	</tbody>
 </table>

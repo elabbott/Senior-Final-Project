@@ -15,11 +15,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<% Order.where(:parent_id => current_user.id).each do |fb| %>
+		<% Order.where(:parent_id => current_user.id).each do |fb| %>
+			<% if fb.feedback != nil %>
+			<tr>
 				<td><%= fb.price %></td>
 				<td><%= fb.feedback%></td>
+			</tr>
 			<% end %>
-		</tr>
+		<% end %>
 	</tbody>
 </table>
