@@ -30,6 +30,7 @@
           <tr>
             <td>Name</td>
             <td>Zipcode</td>
+            <td>ID</td>
             <td>Select</td>
           </tr>
           </thead>
@@ -38,8 +39,9 @@
           <tr>
             <td><%= schools.name %></td>
             <td><%= schools.zipcode %></td>
+            <td><%= schools.id %></td>  
             <%= f.hidden_field :school_id, :value => schools.id %>
-            <td><%= f.submit 'Add School', class: "btn btn-primary btn-block"%></td>
+            <td><%= f.submit 'Add School', name: schools.id, class: "btn btn-primary btn-block"%></td>
           </tr>
           <% end %>
           </tbody>
@@ -47,4 +49,6 @@
       </div>
     </div>
   </div>
+<%= button_to 'Back', authenticated_root_path, method: :get %>
+
 <% end %>

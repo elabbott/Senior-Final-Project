@@ -17,10 +17,10 @@
   </div>
   <div class="field">
     <%= f.label :dob %><br>
-    <%= f.date_select :dob %>
+    <%= f.date_field :dob %>
   </div>
     <div class="field">
-    <%= f.label :dob %><br>
+    <%= f.label :school_id %><br>
 		<%= f.select(:school_id, options_for_select(School.all.collect {|p| [ p.name, p.id ] }),{}, { :class => 'form-control', :id => 'type_dd'})%>
   </div>
   <%= f.hidden_field :parent_id, :value => current_user.id%>

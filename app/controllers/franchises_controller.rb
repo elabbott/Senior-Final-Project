@@ -18,12 +18,14 @@ class FranchisesController < ApplicationController
   end
 
   def edit
+    @franchise =Franchise.find(params[:id])
   end
 
   def create
 
     @franchise = Franchise.new(franchise_params)
     #@franchise.school_id = Franchise.find(params[:school_id])
+    @franchise.school_id = params.key('Add School')
     @franchise.user_id = current_user.id
     @franchise.zipcode = current_user.zipcode
     @franchise.save
@@ -37,7 +39,9 @@ class FranchisesController < ApplicationController
 
   def destroy
     @franchise.destroy
-    respond_with(@franchise)
+    respond_to do |format|
+      format.html{redirect_to homepages_url, notice: 'Franchise was deleted'}
+    end
   end
   def approve
     @franchise.approve = true
@@ -52,6 +56,6 @@ class FranchisesController < ApplicationController
     end
 
     def franchise_params
-      params.require(:franchise).permit(:email, :encrypted_password, :address, :fid, :school_id)
+      params.require(:franchise).permit(:zipcode, :approved,:school_id)
     end
 end
