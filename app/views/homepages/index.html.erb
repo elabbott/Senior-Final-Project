@@ -13,10 +13,6 @@
 
 <%= button_to "Register my child", new_child_path, :method => :get%>
 <% @orders = Order.where(:parent_id => current_user.id) rescue nil %>
-<%if @orders.count > 0 %>
-<%= button_to "My Order History", orders_path, :method => :get%>
-<%end%>
-
 <br>
 <table class="table">
 	<thead>
