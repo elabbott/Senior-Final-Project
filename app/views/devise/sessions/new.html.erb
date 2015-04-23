@@ -1,3 +1,9 @@
+<header>
+	<%= render 'layouts/navigation2' %>
+</header>
+
+<body class="body2">		
+	<div class="main2">
 		<h1 class="text-center">Welcome to Yummy Tummies!</h1>
 		<br/>
 			<strong class="text-center">Concerned about your child's health and wellness? Want to make a difference when it comes to eating 
@@ -15,5 +21,6 @@
 				<a href="#newsessionmodal-form" class="btn btn-primary btn-lg custombtnblock"data-toggle="modal">Login</a>
 				<%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary btn-lg custombtnblock' %>
 			</p>
-
+	</div>
+</body>
 <%= render :partial => 'new' %>
