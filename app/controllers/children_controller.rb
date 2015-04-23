@@ -1,48 +1,30 @@
-class ChildrenController < ApplicationController
-  before_action :set_child, only: [:show, :edit, :update, :destroy]
-
-  respond_to :html
-
-  def index
-    @children = Child.all
-    respond_with(@children)
-  end
-
-  def show
-    respond_with(@child)
-  end
-
-  def new
-    @child = Child.new
-    respond_with(@child)
-  end
-
-  def edit
-  end
-
-  def create
-    @child = Child.new(child_params)
-    @child.save
-    respond_with(@child)
-  end
-
-  def update
-    @child.update(child_params)
-    respond_with(@child)
-  end
+class ChildrenController < InheritedResources::Base
 
 
-  def destroy
-    @child.destroy
-    respond_with(@child)
-  end
 
-  private
-    def set_child
-      @child = Child.find(params[:id])
-    end
 
-    def child_params
-      params.require(:child).permit(:name, :school_id, :user_id, :meal_id)
+def create
+  
+  @child = Child.create(child_params)
+   respond_to do |format|
+      if @child.save
+        format.html { redirect_to homepages_path, notice: 'Child successfully registered!' }
+        format.json { render action: 'show', status: :created, location: @child}
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @child.errors, status: :unprocessable_entity }
+      end
     end
 end
+
+
+
+
+
+  private
+
+    def child_params
+      params.require(:child).permit(:name, :dob, :parent_id, :school_id)
+    end
+end
+

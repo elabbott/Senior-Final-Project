@@ -10,25 +10,22 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_area :name %>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :dob %><br>
+    <%= f.date_field :dob %>
+  </div>
+    <div class="field">
     <%= f.label :school_id %><br>
-    <%= f.text_field :school_id %>
+		<%= f.select(:school_id, options_for_select(School.all.collect {|p| [ p.name, p.id ] }),{}, { :class => 'form-control', :id => 'type_dd'})%>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :meal_id %><br>
-    <%= f.text_field :meal_id %>
-  </div>
+  <%= f.hidden_field :parent_id, :value => current_user.id%>
+
   <div class="actions">
     <%= f.submit %>
-	<%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
   </div>
 <% end %>

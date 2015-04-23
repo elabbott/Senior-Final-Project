@@ -6,6 +6,9 @@ class CreatePaymentInfos < ActiveRecord::Migration
       t.integer :cnum
       t.date :expdate
       t.integer :cvv
+      t.integer :order_id
+      t.integer :parent_id
+      t.integer :child_id
 
       t.timestamps
     end

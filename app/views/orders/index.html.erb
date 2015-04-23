@@ -1,3 +1,69 @@
+
+
+
+
+<% if current_user.franchise == false && current_user.user_type == 2 %>
+
+
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Completion(Payment Submitted)</th>
+      <th>Child</th>
+      <th>Leave/Read Feedback</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Order.where(:parent_id => current_user.id).each do |order| %>
+      <tr>
+        <td><%= order.price %></td>
+        <td><%= order.complete %></td>
+        <td><%= Child.find_by_id(order.child_id).name %></td>
+        <%if order.feedback_flag == nil || order.feedback_flag == "false"%>
+        <td><%= button_to "Leave Feedback", feedback_path(order.id), :method => :get%></td>
+        <%else%>
+         <td><%= order.feedback%></td>
+         <%end%>
+
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<%else%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1>Listing orders</h1>
 
 <table>
@@ -29,3 +95,4 @@
 <br>
 
 <%= link_to 'New Order', new_order_path %>
+<%end%>

@@ -1,4 +1,5 @@
 
+
 <header>
 	<%= render 'layouts/navigation' %>
 </header>
@@ -16,19 +17,21 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @meals.each do |meal| %>
+		<% Meal.all.each do |meal| %>
 
 		<tr>
 			<td><%= meal.name %></td>
 			<td><%= meal.description%></td>
 			<td><%= meal.price %></td>
 			<td><%= meal.calories %></td>
-			<td><%= radio_button_tag 'meals[meal_id][]', meal.id, false %></td>
-
+			<td><%= check_box_tag 'meals[meal_id][]', meal.id, false, :class => "hue" %></td>
 		</tr>
 		<% end %>
+		  <%= hidden_field_tag 'child_id', Child.find_by_id(params[:id]).id%>
+
 	</tbody>
 </table>
+
 
 <%= submit_tag 'Submit' %>
 

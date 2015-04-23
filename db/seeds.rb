@@ -30,6 +30,18 @@ User.create!(
     user_type: 3
 )
 
+User.create!(
+    email: "parent@ppp.ppp",
+    password: "123123123",
+    fname: "Erica",
+    lname: "Bust",
+    franchise: false,
+    approved: false,
+    dob: '01/13/1931',
+    zipcode: 31602,
+    user_type: 2
+)
+
 School.create!(
     name: "Valdosta Elementary",
     zipcode: 31601,
@@ -42,25 +54,7 @@ School.create!(
     school_id: 2
  )
 
-Child.create!(
-    name: "Jimmy",
-    school_id: 1,
-  )
-  
-Child.create!(
-    name: "Meghan",
-    school_id: 1,
-  )
-  
-Child.create!(
-    name: "Evan",
-    school_id: 1,
-  )
 
-Child.create!(
-    name: "Ben",
-    school_id: 2,
-  )
   
  Meal.create!(
     name: "Spaghetti",

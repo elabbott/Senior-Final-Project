@@ -1,19 +1,8 @@
-<% if current_user.user_type == 2 %>
-<header>
-	<%= render 'layouts/navigation' %>
-</header>
-
-<%= render :partial => 'add_children2_form'%>
-<% elsif current_user.user_type == 4 %>
 <h1>Listing children</h1>
 
 <table>
   <thead>
     <tr>
-      <th> name</th>
-      <th>School</th>
-      <th>User</th>
-      <th>Meal</th>
       <th></th>
       <th></th>
       <th></th>
@@ -23,10 +12,6 @@
   <tbody>
     <% @children.each do |child| %>
       <tr>
-        <td><%= child. name %></td>
-        <td><%= child.school_id %></td>
-        <td><%= child.user_id %></td>
-        <td><%= child.meal_id %></td>
         <td><%= link_to 'Show', child %></td>
         <td><%= link_to 'Edit', edit_child_path(child) %></td>
         <td><%= link_to 'Destroy', child, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -38,5 +23,3 @@
 <br>
 
 <%= link_to 'New Child', new_child_path %>
-<%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
-<% end %>
