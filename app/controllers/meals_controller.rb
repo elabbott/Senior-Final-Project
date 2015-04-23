@@ -38,6 +38,16 @@ class MealsController < ApplicationController
     @meals = Meal.all
   end
 
+  # def process_add_meal_to_meal_list
+  #   @meal_list = meal_list.find_by_id(params[:meal_list])
+  #   Meal.find(params[:meals][:meal_id]).each do |m|
+  #     @meal_list.update_attributes(:meal_id => m.id)
+  # end
+  # def add_meal_to_meal_list
+  #   @meals = Meal.all
+  # end
+
+
   def create
     @meal = Meal.new(meal_params)
     respond_to do |format|
@@ -49,12 +59,6 @@ class MealsController < ApplicationController
       end
     end
   end
-def process_add_meal_to_franchise
-end
-def add_meal_to_franchise
-    @meals = Meal.all
-  end
-
 
   def update
     @meal.update(meal_params)
