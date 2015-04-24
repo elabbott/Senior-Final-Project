@@ -2,11 +2,12 @@ class PaymentInfosController < InheritedResources::Base
   def process_payment
 
     @order = Order.find_by_id(params[:order_id]) rescue nil
-
     @savedpayment = PaymentInfo.find_by_id(params[:payment][:payment_id]) rescue nil
     if @savedpayment != nil
 
-    @order.update_attributes(:complete => true)
+    @order.update_attributes(:complete => true, :pay_type => @savedpayment.c_type)
+    else
+      @order.update_attributes(:complete => true, :pay_type => params[:c_type])
 
     end
     if params[:savecard] == "Save" && params[:cnum].size == 16
@@ -14,7 +15,6 @@ class PaymentInfosController < InheritedResources::Base
       @date = Date.new event["{:start_year=>2015}(1i)"].to_i, event["{:start_year=>2015}(2i)"].to_i, event["{:start_year=>2015}(3i)"].to_i
       @payment = PaymentInfo.create(:name => params[:name], :c_type => params[:c_type], :cnum => params[:cnum], :cvv => params[:cvv])
       @payment.update_attributes(:order_id => @order.id, :parent_id => current_user.id, :child_id => @order.child_id, :expdate => @date)
-          @order.update_attributes(:complete => true)
 
     end
 

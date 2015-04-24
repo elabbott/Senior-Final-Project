@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.decimal :price
       t.integer :parent_id
       t.integer :child_id
-      t.integer :pay_type
+      t.text :pay_type
       t.boolean :complete
       t.boolean :feedback_flag
       t.text :feedback

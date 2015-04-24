@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150422013036) do
     t.decimal  "price"
     t.integer  "parent_id"
     t.integer  "child_id"
-    t.integer  "pay_type"
+    t.text     "pay_type"
     t.boolean  "complete"
     t.boolean  "feedback_flag"
     t.text     "feedback"
@@ -87,8 +87,8 @@ ActiveRecord::Schema.define(version: 20150422013036) do
   end
 
   create_table "payment_infos", force: true do |t|
-    t.string   "name"
-    t.integer  "c_type"
+    t.text     "name"
+    t.text     "c_type"
     t.integer  "cnum"
     t.date     "expdate"
     t.integer  "cvv"
