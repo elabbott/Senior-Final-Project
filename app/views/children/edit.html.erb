@@ -1,6 +1,29 @@
-<h1>Editing child</h1>
-
+<h1>Editing Child</h1>
+<% if current_user.user_type != 4 %>
 <%= render 'form' %>
+<% end %>
+<% if current_user.user_type == 4 %>
+<%= form_for(@child) do |c| %>
+  <% if @child.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@child.errors.count, "error") %> prohibited this line_item from being saved:</h2>
 
-<%= link_to 'Show', @child %> |
-<%= link_to 'Back', children_path %>
+      <ul>
+      <% @child.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="form-group">
+    <%= c.label :approved %><br>
+    <%= c.check_box :approved %>
+  </div>
+  <div class="actions">
+    <%= c.submit %>
+  </div>
+  <% end %>
+  <% end %>	
+<%= link_to 'Show', @child %> 
+<%= link_to 'Back', authenticated_root_path %>

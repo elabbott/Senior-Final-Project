@@ -24,7 +24,7 @@ end
   private
 
     def child_params
-      params.require(:child).permit(:name, :dob, :parent_id, :school_id)
+      params.require(:child).permit(:name, :dob, :parent_id, :school_id, :approved)
     end
 end
 

@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150422013036) do
     t.date     "dob"
     t.integer  "parent_id"
     t.integer  "school_id"
+    t.boolean  "approved",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

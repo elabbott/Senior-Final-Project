@@ -27,7 +27,7 @@
 		<th>Purchase Meals</th>
 	</thead>
 	<tbody>
-		<%Child.where(:parent_id => current_user.id).each do |child|%>
+		<%Child.where(:parent_id => current_user.id, :approved => true).each do |child|%>
 
 		<tr>
 			<td><%= child.name %></td>
@@ -204,6 +204,28 @@
 				<td><%= franchises.school_id %></td>
 				<td><%= franchises.zipcode %></td>
 				<td><%= button_to 'Approve', edit_franchise_path(franchises.id), method: :get %> </td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<table class="table table-striped table-bordered">
+		<thead>
+		Children that need approval.
+			<tr>
+				<td>Child's Parent ID</td>
+				<td>Child Name</td>
+				<td>School ID</td>
+				<td>Date of Birth</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% Child.where(:approved => false ).each do |child|%> 
+			<tr>
+				<td><%= child.parent_id %></td>
+				<td><%= child.name %></td>
+				<td><%= child.school_id %></td>
+				<td><%= child.dob %></td>
+				<td><%= button_to 'Approve', edit_child_path(child.id), method: :get %> </td>
 			</tr>
 			<% end %>
 		</tbody>
