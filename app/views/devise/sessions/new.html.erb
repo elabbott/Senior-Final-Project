@@ -1,50 +1,116 @@
 <header>
 	<%= render 'layouts/navigation2' %>
 </header>
-
-<body class="body2">		
-		<h1 class="text-center">Welcome to Yummy Tummies!</h1>
-		<br/>
-				<strong class="text-center">Concerned about your child's health and wellness? Want to make a difference when it comes to eating 
-				healthy and nutrtious meals? Then Yummy Tummies is for you! Here we strive to provide local ingredients
-				and home cooked meals so that your Child will be eating happier and healthier for every meal! Interested?
-				Press the sign up button below to create an account, or the login button if you already have one.</strong>
-			<div id="foodCarousel" class="carousel slide" data-ride= "carousel">
+<div id="ytCarousel" class="carousel slide" style="width: 100%; height: 100%; margin: 0 auto" data-ride= "carousel" data-interval="false">
 				<ol class="carousel-indicators">
-					<li data-target="#foodcarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#foodcarousel" data-slide-to="1"></li>
-					<li data-target="#foodcarousel" data-slide-to="2"></li>
-					<li data-target="#foodcarousel" data-slide-to="3"></li>
+					<li data-target="#ytcarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#ytcarousel" data-slide-to="1"></li>
+					<li data-target="#ytcarousel" data-slide-to="2"></li>
+					<li data-target="#ytcarousel" data-slide-to="3"></li>
 				</ol>
-				<div class="carousel-inner" role="listbox">
+				<div class="carousel-inner" role="listbox">	
 					<div class="item active">
-						<%= image_tag "burger.jpg" %>
-					</div>
-					<div class="item">
-						<%= image_tag "spaghetti.jpg" %>
-					</div>
-					<div class="item">
-						<%= image_tag "healthy.jpg" %>
-					</div>
-				</div>
-				
-				<a class="left carousel-control" href="#foodCarousel" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				</a>
-				<a class="right carousel-control" href="#foodCarousel" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				</a>
-			</div>
-		<br/>		
-		<br/>
-			<strong class="text-center">Don't have a Yummy Tummies provider near you but want to get started? Click the Register
-				button and we'll get you on your way of starting your own franchise!</strong>
-
-		<br/>
-		<br/>
-			<p id="action" class="lead text-center">
-				<a href="#newsessionmodal-form" class="btn btn-primary btn-lg custombtnblock"data-toggle="modal">Login</a>
-				<%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary btn-lg custombtnblock' %>
-			</p>
-</body>
+						<h1 class="text-center">Welcome to Yummy Tummies!</h1>
+						<h2 class="text-center">The Smart Way to Feed your Child</h2>
+						<br/>
+						<br/>
+						<br/>
+							<div class="main2">
+								<strong class="text-center">
+									Are you concerned with what your child is eating? Do you want to ensure that they recieve a
+									balanced, healthy, and tasty meal? Then Yummy Tummies might just be for you!
+								</strong>
+							</div>
+							<br/>
+							<br/>
+							<br/>
+							<div id="foodCarousel" class="carousel slide" style="width: 1200px; height: 675px; margin: 0 auto" data-ride= "carousel">
+								<ol class="carousel-indicators">
+									<li data-target="#foodcarousel" data-slide-to="0" class="active"></li>
+									<li data-target="#foodcarousel" data-slide-to="1"></li>
+									<li data-target="#foodcarousel" data-slide-to="2"></li>
+									<li data-target="#foodcarousel" data-slide-to="3"></li>
+								</ol>
+								<div class="carousel-inner" role="listbox">
+									<div class="item active">
+										<%= image_tag "healthy.jpg", size: "1200x675" %>
+									</div>
+									<div class="item">
+										<%= image_tag "tray.jpg", size: "1200x675" %>
+									</div>
+									<div class="item">
+										<%= image_tag "kid.jpg", size: "1000x400" %>
+									</div>
+								</div>
+								
+								<a class="left carousel-control" href="#foodCarousel" data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								</a>
+								<a class="right carousel-control" href="#foodCarousel" data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+						<h2 class= "text-center"> What can Yummy Tummies offer that others can't?</h2>
+						<br/>
+						<br/>
+						<table class="main2 table table-bordered table-striped">
+							<tbody>
+								<tr>
+									<td class="col-md-1 main3">
+										A diverse, well thought out Menu designed by top of the line Chefs, 
+										with a wide variety of selections for a wide variety of tastes. Each of our Company-hired
+										Chefs make it their goals to provide prepared meals that are tasty, healthy, and affordable.
+									</td>
+									<td class="col-md-1">
+										<%= image_tag "chef.jpg", size: "400x600" %>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-md-1">
+										<%= image_tag "security.jpg", size: "400x600" %>
+									</td>
+									<td class="col-md-1 main3">
+										Detailed account authentication and safety features. We make
+										sure that nobody can access your account but you, and that only
+										approved parents can access their children
+									</td>
+								</tr>
+								<tr>
+									<td class="col-md-1 main3">
+										A way to start Yummy Tummies in your own area! Are you a parent of a student in an area that
+										doesn't provide our services but are interested in them? Then sign up as a Franchise Owner,
+										and we'll begin the process of bringing good, healthy eating to your area!
+									</td>
+									<td class="col-md-1">
+										<%= image_tag "franchise.jpg", size: "400x600" %>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						<div class="item" style="width:100% height:100%">
+						<div class="text-center">
+							<h1 class="text-center">
+								Ready to get started? 
+							</h1>
+							<h3 class="text-center">Registration is just a few simple steps and you can be on your way
+								to a happier, healthier child!
+							</h3>
+							<br/>
+							<br/>
+							<%= button_to "Sign up", new_user_registration_path, :method => :get,  :class => 'btn btn-success btn-lg custombtnblock' %>
+							<br/>
+							<br/>
+							<%= image_tag "happy.jpg", size: "1200x675" %>
+						</div>
+						</div>
+								<a class="left carousel-control" href="#ytCarousel" data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								</a>
+								<a class="right carousel-control" href="#ytCarousel" data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								</a>
+</div>
 <%= render :partial => 'new' %>
