@@ -5,6 +5,7 @@ class CreateFranchises < ActiveRecord::Migration
       t.integer :user_id
       t.integer :zipcode
       t.boolean :approved, default: false
+      t.string :name
       t.timestamps
     end
   end

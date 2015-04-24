@@ -15,6 +15,8 @@ User.create!(
     password: "123123123",
     fname: "Jacob",
     lname: "Benoit",
+    franchise: false,
+    approved: true,
     dob: '06/02/1992',
     zipcode: 31601,
     user_type: 4
@@ -25,6 +27,8 @@ User.create!(
     password: "123123123",
     fname: "Eric",
     lname: "Abbott",
+    franchise: false,
+    approved: true,
     dob: '01/13/1993',
     zipcode: 31602,
     user_type: 3
@@ -37,6 +41,17 @@ User.create!(
     lname: "Bust",
     franchise: false,
     approved: false,
+    dob: '01/13/1931',
+    zipcode: 31602,
+    user_type: 2
+)
+User.create!(
+    email: "franchise@f.com",
+    password: "123123123",
+    fname: "Jim",
+    lname: "Jimmerson",
+    franchise: true,
+    approved: true,
     dob: '01/13/1931',
     zipcode: 31602,
     user_type: 2

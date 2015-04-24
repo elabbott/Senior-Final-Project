@@ -75,15 +75,16 @@
         <table class="table table-striped table-bordered" id='franchiseList'>
           <thead>
           <tr>
-            <td>ID</td>
-            <td>School ID</td>
+            <td>Name</td>
+            <td>School Name</td>
           </tr>
           </thead>
           <tbody>
           <% Franchise.where(:user_id => current_user.id, :approved => true).each do |franchises|%>
           <tr>
-            <td><%= franchises.id %></td>
-            <td><%= franchises.school_id %></td>
+            <td><%= franchises.name %></td>
+            <td><%= School.find(franchises.school_id).name%></td>
+            <td><%= button_to "Select Meals to Offer", add_meal_to_franchise_path(franchises.id), :method => :get%></td>
             <td>select meals for franchise button</td>
             <td>see meal list button</td>
             <td>handle money // view orders button</td>
@@ -105,16 +106,16 @@
 		<table class="table table-striped table-bordered" id="pendingList">
 		<thead>
 			<tr>
-				<td>ID</td>
-				<td>School ID</td>
+				<td>Name</td>
+				<td>School Name</td>
 				<td>Approved</td>
 			</tr>
 		</thead>
 		<tbody>
 			<% Franchise.where(:user_id => current_user.id, :approved => false).each do |franchises|%>
 			<tr>
-				<td><%= franchises.id%></td>
-				<td><%= franchises.school_id%></td>
+				<td><%= franchises.name%></td>
+				<td><%= School.select(:name).where(:id => franchises.school_id)%></td>
 				<td><%= franchises.approved%></td>
 				<td><%= button_to "Cancel", franchise_path(franchises.id), method: :delete %> </td>
 			</tr>

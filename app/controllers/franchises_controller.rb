@@ -29,12 +29,18 @@ class FranchisesController < ApplicationController
     @franchise.user_id = current_user.id
     @franchise.zipcode = current_user.zipcode
     @franchise.save
-    respond_with(@franchise)
+    respond_to do |format|
+
+      format.html { redirect_to homepages_url, notice: 'Franchise created, waiting on approval!' }
+    end
   end
 
   def update
     @franchise.update(franchise_params)
-    respond_with(@franchise)
+    respond_to do |format|
+
+      format.html { redirect_to homepages_url, notice: 'Franchise information was updated!' }
+    end
   end
 
   def destroy
@@ -46,7 +52,17 @@ class FranchisesController < ApplicationController
   def approve
     @franchise.approve = true
   end
-
+ def process_add_meal_to_franchise
+   @selections = Meal.find(params[:meals][:meal_id]) rescue nil
+   if @selections != nil
+    @selections.each do |meal|
+     MealList.create(:franchise_id => @franchise.id)#, :meal_id => meal.meal_id)
+    end     
+   end      
+    respond_to do |format|
+      format.html { redirect_to homepages_url, notice: 'Meals assigned successfully!' }
+    end
+  end
 
 
 
@@ -56,6 +72,6 @@ class FranchisesController < ApplicationController
     end
 
     def franchise_params
-      params.require(:franchise).permit(:zipcode, :approved,:school_id)
+      params.require(:franchise).permit(:zipcode, :approved,:school_id, :name)
     end
 end

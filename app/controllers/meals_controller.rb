@@ -30,23 +30,26 @@ class MealsController < ApplicationController
       format.html { redirect_to homepages_url, notice: 'Meals assigned successfully!' }
 
     end
-  end
-
-  
-  
+  end  
   def add_meal_to_child
     @meals = Meal.all
   end
 
-  # def process_add_meal_to_meal_list
-  #   @meal_list = meal_list.find_by_id(params[:meal_list])
-  #   Meal.find(params[:meals][:meal_id]).each do |m|
-  #     @meal_list.update_attributes(:meal_id => m.id)
-  # end
-  # def add_meal_to_meal_list
-  #   @meals = Meal.all
-  # end
-
+ def add_meals_to_meal_list
+  @meal_list = MealList.find_by_id(params[:child])
+  Meal.find(params[:meals][:meal_id]).each do |m|
+   if @selections != nil
+    @selections.each do |meal|
+     MealList.create(:meal_id => meal.meal_id)
+    end     
+   end      
+    respond_to do |format|
+      format.html { redirect_to homepages_url, notice: 'Meals assigned successfully!' }
+    end   
+ end
+ def add_meal_to_meal_list
+    @meals = Meal.all
+  end
 
   def create
     @meal = Meal.new(meal_params)
