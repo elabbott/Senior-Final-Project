@@ -60,12 +60,14 @@ School.create!(
     name: "Spaghetti",
     description: "Noodles, Sauce, and Meat",
     calories: 221,
-    price: 5.45
+    price: 5.45,
+    image_url: open('app/assets/images/spaghetti.jpg')
   )
   
   Meal.create!(
     name: "Hamburger and Fries",
     description: "Beef Patty and Bread buns with potato fries",
     calories: 719,
-    price: 3.99
+    price: 3.99,
+    image_url: open('app/assets/images/burger.jpg')
   )

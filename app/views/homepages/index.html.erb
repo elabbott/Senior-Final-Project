@@ -1,4 +1,9 @@
-
+<style>
+	.list_image {
+		width: 60px;
+		height: 70px;
+	}
+</style>
 <script>
 	$(document).ready(function() {
 	})
@@ -139,6 +144,7 @@
 			<td>Description</td>
 			<td>Calories</td>
 			<td>Price</td>
+			<td>Image</td>
 			<td>Edit</td>
 		</tr>
 	</thead>
@@ -149,6 +155,7 @@
 			<td><%= meals.description%></td>
 			<td><%= meals.calories%></td>
 			<td><%= meals.price %></td>
+			<td><%= image_tag(meals.image_url, class: 'list_image')%></td>
 			<td><%= link_to "Edit Meal", edit_meal_path(meals), :class => "btn btn-primary"%></td>
 		</tr>
 		<% end %>

@@ -59,6 +59,7 @@ gem 'cancan'
 gem 'rolify'
 
 gem 'high_voltage'
+gem 'carrierwave'
 
 group :production do
   gem 'pg', '0.15.1'

@@ -1,4 +1,9 @@
-
+<style>
+	.list_image {
+		width: 60px;
+		height: 70px;
+	}
+</style>
 
 <header>
 	<%= render 'layouts/navigation' %>
@@ -13,6 +18,7 @@
 			<th>Description</th>
 			<th>Price</th>
 			<th>Calories</th>
+			<th>Image</th>
 			<th>Select</th>
 		</tr>
 	</thead>
@@ -24,6 +30,7 @@
 			<td><%= meal.description%></td>
 			<td><%= meal.price %></td>
 			<td><%= meal.calories %></td>
+			<td><%= image_tag(meal.image_url, class: 'list_image')%></td>
 			<td><%= check_box_tag 'meals[meal_id][]', meal.id, false, :class => "hue" %></td>
 		</tr>
 		<% end %>
