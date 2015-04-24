@@ -132,11 +132,32 @@
 	</div>
 
 <% elsif current_user.user_type == 3 %>
-<h1>Welcome, Chef <%= current_user.fname%> <%= current_user.lname%></h1>
 
-<div class="text-center">
-	<%= link_to "Create Meal", new_meal_path, :class => "btn btn-primary" %>
-</div>
+
+<h1 class="text-center">Welcome, Chef <%= current_user.fname%> <%= current_user.lname%></h1>
+
+<br/>
+<br/>
+
+<table class="table table-bordered table-striped">
+	<tbody>
+		<tr>
+			<td class="col-md-1">
+				To add a meal to the System, please click here and fill out the relevant 
+				information. Once created, a meal can be edited in the table below.
+			</td>
+			<td class="col-md-1">
+				<%= link_to "Create Meal", new_meal_path, :class => "btn btn-success" %>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<br/>
+<br/>
+
+<h3>Existing Meals:</h3>
+
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
@@ -156,7 +177,7 @@
 			<td><%= meals.calories%></td>
 			<td><%= meals.price %></td>
 			<td><%= image_tag(meals.image_url, class: 'list_image')%></td>
-			<td><%= link_to "Edit Meal", edit_meal_path(meals), :class => "btn btn-primary"%></td>
+			<td><%= link_to "Edit Meal", edit_meal_path(meals), :class => "btn btn-success"%></td>
 		</tr>
 		<% end %>
 	</tbody>
