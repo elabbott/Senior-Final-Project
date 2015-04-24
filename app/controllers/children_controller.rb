@@ -17,7 +17,10 @@ def create
     end
 end
 
-
+def approve
+    @child.approved = true
+     format.html{redirect_to homepages_url, notice: 'Child was approved'}
+  end
 
 
 

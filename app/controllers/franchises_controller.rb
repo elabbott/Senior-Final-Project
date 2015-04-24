@@ -45,6 +45,7 @@ class FranchisesController < ApplicationController
   end
   def approve
     @franchise.approve = true
+     format.html{redirect_to homepages_url, notice: 'Franchise was approved'}
   end
 
 
