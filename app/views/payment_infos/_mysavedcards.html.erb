@@ -1,0 +1,36 @@
+<h1>Listing payment_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>C type</th>
+      <th>Cnum</th>
+      <th>Expdate</th>
+      <th>Cvv</th>
+      <th>Use this Payment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% PaymentInfo.where(:parent_id => current_user.id).each do |payment_info| %>
+      <tr>
+        <td><%= payment_info.name %></td>
+        <td><%= payment_info.c_type %></td>
+        <td><%= payment_info.cnum %></td>
+        <td><%= payment_info.expdate %></td>
+        <td><%= payment_info.cvv %></td>
+        <td><%= radio_button_tag 'payment[payment_id][]', payment_info.id, false, :class => "hue" %></td>
+        <td><%= link_to 'Show', payment_info %></td>
+        <td><%= link_to 'Edit', edit_payment_info_path(payment_info) %></td>
+        <td><%= link_to 'Destroy', payment_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
