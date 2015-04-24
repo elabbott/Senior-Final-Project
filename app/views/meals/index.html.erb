@@ -5,9 +5,13 @@
 	}
 </style>
 
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
 <h1>Listing meals</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -40,4 +44,4 @@
 <br>
 
 <%= link_to 'New Meal', new_meal_path %>
-<%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
+<%= link_to 'Back', authenticated_root_path, :class => "btn btn-success" %>
