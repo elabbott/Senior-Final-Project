@@ -10,6 +10,7 @@
 </header>
 <%= form_tag(process_add_meal_to_child_path) do%>
 <h1>Make meal selections for <%=Child.find_by_id(params[:id]).name%></h1>
+<br/>
 <table class="table table-striped table-bordered">
 	<%=hidden_field_tag 'child', Child.find_by_id(params[:id]).id%>
 	<thead>
