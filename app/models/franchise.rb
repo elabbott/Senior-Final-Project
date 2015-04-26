@@ -1,4 +1,4 @@
 class Franchise < ActiveRecord::Base
-  has_many :schools
-  has_many :meals
+  has_many :meal_lists
+  has_many :orders
 end

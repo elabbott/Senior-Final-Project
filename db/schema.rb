@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150422013036) do
 
   create_table "meal_lists", force: true do |t|
     t.integer  "meal_id"
+    t.integer  "franchise_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

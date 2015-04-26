@@ -61,7 +61,13 @@
 
 <% elsif current_user.user_type == 2 %>
 	<h1 class="text-center">Welcome, <%= current_user.fname %> <%= current_user.lname %>.</h1>
+	<div class="left">
 	<%= button_to "Request Franchise", new_franchise_path, method: :get %>
+	</div>
+	<div class="right">
+ 	<!--<%= button_to "Create a Menu", add_meal_to_meal_list_path(current_user.id), :method => :get%> -->
+
+	</div>
 	<p></p>
 
 
@@ -83,8 +89,8 @@
           <% Franchise.where(:user_id => current_user.id, :approved => true).each do |franchises|%>
           <tr>
             <td><%= franchises.name %></td>
-            <td><%= School.find(franchises.school_id).name%></td>
-            <td><%= button_to "Select Meals to Offer", add_meal_to_franchise_path(franchises.id), :method => :get%></td>
+            <td><%= School.find_by_id(franchises.school_id).name%></td>
+            <td><%= button_to "Create a Menu", new_meal_list_path, :method => :get%></td>
             <td>select meals for franchise button</td>
             <td>see meal list button</td>
             <td>handle money // view orders button</td>
@@ -115,7 +121,7 @@
 			<% Franchise.where(:user_id => current_user.id, :approved => false).each do |franchises|%>
 			<tr>
 				<td><%= franchises.name%></td>
-				<td><%= School.select(:name).where(:id => franchises.school_id)%></td>
+				<td><%= School.find_by_id(franchises.school_id).name%></td>
 				<td><%= franchises.approved%></td>
 				<td><%= button_to "Cancel", franchise_path(franchises.id), method: :delete %> </td>
 			</tr>

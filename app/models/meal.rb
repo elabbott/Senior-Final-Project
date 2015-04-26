@@ -4,4 +4,5 @@ class Meal < ActiveRecord::Base
   validates :name, uniqueness: true
   
   belongs_to :order
+  belongs_to :meal_lists
 end

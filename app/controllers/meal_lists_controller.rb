@@ -1,6 +1,6 @@
 class MealListsController < InheritedResources::Base
  
-def add_meals_to_meal_list
+def add_meal_to_meal_list
   selections = Meal.find(params[:meals][:meal_id]) rescue nil
    if @selections != nil
     @selections.each do |meal|
@@ -28,7 +28,7 @@ end
   private
 
     def meal_list_params
-      params.require(:meal_list).permit(:meal_ids)
+      params.require(:meal_list).permit(:meal_id, :franchise_id)
     end
 end
 
