@@ -7,7 +7,9 @@ class PaymentInfosController < InheritedResources::Base
 
     @order.update_attributes(:complete => true, :pay_type => @savedpayment.c_type)
     else
+      if params[:cnum].size == 16
       @order.update_attributes(:complete => true, :pay_type => params[:c_type])
+      end
 
     end
     if params[:savecard] == "Save" && params[:cnum].size == 16
