@@ -24,7 +24,6 @@ class FranchisesController < ApplicationController
   def create
 
     @franchise = Franchise.new(franchise_params)
-    #@franchise.school_id = Franchise.find(params[:school_id])
     @franchise.school_id = params.key('Add School')
     @franchise.user_id = current_user.id
     @franchise.zipcode = current_user.zipcode
@@ -52,7 +51,7 @@ class FranchisesController < ApplicationController
   def approve
     @franchise.approve = true
   end
- def process_add_meal_to_franchise
+ def process_add_meal_list_to_franchise
    @selections = Meal.find(params[:meals][:meal_id]) rescue nil
    if @selections != nil
     @selections.each do |meal|

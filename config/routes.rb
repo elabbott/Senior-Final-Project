@@ -27,7 +27,7 @@ Yummytummies::Application.routes.draw do
 
   post "/process_add_meal_to_child" , :to => "purchase_meals#process_add_meal_to_child", :as => 'process_add_meal_to_child'
   
-   get "/payment/:id" , :to => "payment_infos#payment", :as => 'payment'
+  get "/payment/:id" , :to => "payment_infos#payment", :as => 'payment'
 
   post "/process_payment" , :to => "payment_infos#process_payment", :as => 'process_payment'
   

@@ -37,9 +37,8 @@ class MealsController < ApplicationController
 
  def add_meals_to_meal_list
   @meal_list = MealList.find_by_id(params[:meal_list])
-  Meal.find(params[:meals][:meal_id]).each do |m|
-    @meal_list.update_attributes(:meal_id => m.id)      
-  end      
+  @meal_list.update_attributes(:meal_id => Meal.id)
+  @meal_list.update_attributes(:franchise_id => Franchise.id)
   respond_to do |format|
       format.html { redirect_to homepages_url, notice: 'Meals assigned successfully!' }
   end   

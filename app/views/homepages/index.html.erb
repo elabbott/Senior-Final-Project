@@ -90,9 +90,9 @@
           <tr>
             <td><%= franchises.name %></td>
             <td><%= School.find_by_id(franchises.school_id).name%></td>
-            <td><%= button_to "Create a Menu", new_meal_list_path, :method => :get%></td>
-            <td>select meals for franchise button</td>
-            <td>see meal list button</td>
+
+            <td><%= button_to "Add to Menu", new_meal_list_path, method: :get%></td>
+            <td><%= button_to "See Menu", meal_lists_path, method: :get%></td>
             <td>handle money // view orders button</td>
           </tr>
           <% end %>

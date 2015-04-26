@@ -1,24 +1,27 @@
+<script>
+  $(document).ready(function() {
+    $('.table').DataTable({});
+  })
+</script>
 <h1>Listing meal_lists</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Meal</th>
-      <th>Franchise</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Meal Name</th>
+      <th>Meal Price</th>
+      <th>Meal Description</th>
+      <th>Calories</th>
     </tr>
   </thead>
 
   <tbody>
     <% @meal_lists.each do |meal_list| %>
       <tr>
-        <td><%= meal_list.meal_id %></td>
-        <td><%= meal_list.franchise_id %></td>
-        <td><%= link_to 'Show', meal_list %></td>
-        <td><%= link_to 'Edit', edit_meal_list_path(meal_list) %></td>
-        <td><%= link_to 'Destroy', meal_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Meal.find_by_id(meal_list.meal_id).name %></td>
+        <td><%= Meal.find_by_id(meal_list.meal_id).price %></td>
+        <td><%= Meal.find_by_id(meal_list.meal_id).description %></td>
+        <td><%= Meal.find_by_id(meal_list.meal_id).calories %></td>
       </tr>
     <% end %>
   </tbody>
