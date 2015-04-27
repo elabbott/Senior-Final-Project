@@ -17,14 +17,17 @@ def create
     end
 end
 
-
+def approve
+    @child.approved = true
+     format.html{redirect_to homepages_url, notice: 'Child was approved'}
+  end
 
 
 
   private
 
     def child_params
-      params.require(:child).permit(:name, :dob, :parent_id, :school_id)
+      params.require(:child).permit(:name, :dob, :parent_id, :school_id, :approved)
     end
 end
 

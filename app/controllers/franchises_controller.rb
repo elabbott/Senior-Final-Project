@@ -50,6 +50,7 @@ class FranchisesController < ApplicationController
   end
   def approve
     @franchise.approve = true
+     format.html{redirect_to homepages_url, notice: 'Franchise was approved'}
   end
  def process_add_meal_list_to_franchise
    @selections = Meal.find(params[:meals][:meal_id]) rescue nil

@@ -1,8 +1,8 @@
 class CreatePaymentInfos < ActiveRecord::Migration
   def change
     create_table :payment_infos do |t|
-      t.string :name
-      t.integer :c_type
+      t.text :name
+      t.text :c_type
       t.integer :cnum
       t.date :expdate
       t.integer :cvv

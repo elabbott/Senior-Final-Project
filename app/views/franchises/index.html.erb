@@ -1,7 +1,11 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
 <h1>Listing franchises</h1>
 
 <table>
-  <thead>
+  <thead class="table table-bordered table-striped">
     <tr>
       <th>ID</th>
       <th>Owner ID</th>
@@ -32,5 +36,5 @@
 <br>
 
 <%= link_to 'New Franchise', new_franchise_path %>
-<%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
+<%= link_to 'Back', authenticated_root_path, :class => "btn btn-success" %>
 

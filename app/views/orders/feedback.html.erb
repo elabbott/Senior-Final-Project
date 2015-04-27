@@ -1,9 +1,15 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
 <%= form_tag(process_feedback_path) do%>
-<h1>Payment</h1>
+<h1 class="text-center">Give us your Feedback:</h1>
+<br/>
+<br/>
 <div class="field">
-	<%= label_tag "Tell us what you think!" %>
+	<%= label_tag "Dissatisfied with your meal? Or just loved our service? Either way, please leave us a note and our Chefs and Owners will read " %>
 	<br>
-	<%= text_field_tag :feedback %>
+	<%= text_area_tag :feedback %>
 	<%= hidden_field_tag :order_id, params[:id]  %>
 
 </div>
