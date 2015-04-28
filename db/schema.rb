@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150422013036) do
   create_table "meal_lists", force: true do |t|
     t.integer  "meal_id"
     t.integer  "franchise_id"
+    t.integer  "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,6 +79,8 @@ ActiveRecord::Schema.define(version: 20150422013036) do
     t.boolean  "complete"
     t.boolean  "feedback_flag"
     t.text     "feedback"
+    t.integer  "franchise_id"
+    t.date     "date_for_meal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -108,6 +111,8 @@ ActiveRecord::Schema.define(version: 20150422013036) do
     t.integer  "child_id"
     t.boolean  "paid"
     t.integer  "order_id"
+    t.integer  "franchise_id"
+    t.date     "date_for_meal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

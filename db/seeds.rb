@@ -40,7 +40,7 @@ User.create!(
     fname: "Erica",
     lname: "Bust",
     franchise: false,
-    approved: false,
+    approved: true,
     dob: '01/13/1931',
     zipcode: 31602,
     user_type: 2
@@ -51,6 +51,17 @@ User.create!(
     fname: "Jim",
     lname: "Jimmerson",
     franchise: true,
+    approved: true,
+    dob: '01/13/1931',
+    zipcode: 31602,
+    user_type: 2
+)
+User.create!(
+    email: "user@u.com",
+    password: "123123123",
+    fname: "User",
+    lname: "Name",
+    franchise: false,
     approved: true,
     dob: '01/13/1931',
     zipcode: 31602,

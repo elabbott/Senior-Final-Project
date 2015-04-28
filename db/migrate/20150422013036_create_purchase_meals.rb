@@ -6,7 +6,8 @@ class CreatePurchaseMeals < ActiveRecord::Migration
       t.integer :child_id
       t.boolean :paid
       t.integer :order_id
-      
+      t.integer :franchise_id
+      t.date    :date_for_meal
       t.timestamps
     end
   end
