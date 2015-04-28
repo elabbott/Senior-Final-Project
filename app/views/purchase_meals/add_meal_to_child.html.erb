@@ -9,6 +9,7 @@
 	<%= render 'layouts/navigation' %>
 </header>
 <%= form_tag(process_add_meal_to_child_path) do%>
+
 <h1>Make meal selections for <%=Child.find_by_id(params[:id]).name%></h1>
 <br/>
 <table class="table table-striped table-bordered">
@@ -20,19 +21,23 @@
 			<th>Price</th>
 			<th>Calories</th>
 			<th>Image</th>
+			<th>Franchise</th>
 			<th>Select</th>
 		</tr>
 	</thead>
 	<tbody>
-		<% Meal.all.each do |meal| %>
+		<% MealList.where(:zipcode => current_user.zipcode).each do |meal_list| %>
 
 		<tr>
-			<td><%= meal.name %></td>
-			<td><%= meal.description%></td>
-			<td><%= meal.price %></td>
-			<td><%= meal.calories %></td>
-			<td><%= image_tag(meal.image_url, class: 'list_image')%></td>
-			<td><%= check_box_tag 'meals[meal_id][]', meal.id, false, :class => "hue" %></td>
+			<td><%= Meal.find_by_id(meal_list.meal_id).name %></td>
+			<td><%= Meal.find_by_id(meal_list.meal_id).description%></td>
+			<td><%= Meal.find_by_id(meal_list.meal_id).price %></td>
+			<td><%= Meal.find_by_id(meal_list.meal_id).calories %></td>
+			<td><%= image_tag(Meal.find_by_id(meal_list.meal_id).image_url, class: 'list_image')%></td>
+			<td><%= Franchise.where(:user_id => meal_list.franchise_id).first.name %></td>
+			<%= hidden_field_tag 'franchise_id', Franchise.where(:user_id => meal_list.franchise_id).first.user_id %>
+			<td><%= check_box_tag 'meals[meal_id][]', meal_list.id, false, :class => "hue" %></td>
+			
 		</tr>
 		<% end %>
 		  <%= hidden_field_tag 'child_id', Child.find_by_id(params[:id]).id%>
@@ -41,6 +46,8 @@
 </table>
 
 
-<%= submit_tag 'Submit' class: 'btn btn-success'%>
+<%= date_field_tag 'date', class: 'special_input' %>
+<%= submit_tag 'Submit', class: 'btn btn-success' %>
+
 
 <%end%>

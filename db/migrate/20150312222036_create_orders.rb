@@ -8,6 +8,8 @@ class CreateOrders < ActiveRecord::Migration
       t.boolean :complete
       t.boolean :feedback_flag
       t.text :feedback
+      t.integer :franchise_id
+      t.date :date_for_meal
       t.timestamps
     end
   end

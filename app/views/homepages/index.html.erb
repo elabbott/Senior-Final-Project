@@ -73,6 +73,7 @@
 	<thead>
 		<th>Total</th>
 		<th>Child</th>
+		<th>Date for Meals</th>
 		<th>Pay</th>
 
 	</thead>
@@ -82,6 +83,7 @@
 		<tr>
 			<td><%= order.price %></td>
 			<td><%= Child.find_by_id(order.child_id).name %></td>
+			<td><%= order.date_for_meal %> </td>
 			<td><%= button_to "Pay", payment_path(order.id), :method => :get, class: "btn btn-lg btn-success"%></td>
 
 
@@ -134,10 +136,9 @@
           <tr>
             <td><%= franchises.name %></td>
             <td><%= School.find_by_id(franchises.school_id).name%></td>
-
             <td><%= button_to "Add to Menu", new_meal_list_path, method: :get, class: "btn btn-success"%></td>
             <td><%= button_to "See Menu", meal_lists_path, method: :get, class: "btn btn-success"%></td>
-            <td>handle money // view orders button</td>
+            <td><%= button_to "View Paid Orders", purchase_meals_path, method: :get, class: "btn btn-success" %></td>
           </tr>
           <% end %>
           </tbody>

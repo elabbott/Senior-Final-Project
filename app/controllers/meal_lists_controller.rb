@@ -14,6 +14,7 @@ def create
   @meal_list = MealList.new(meal_list_params)
   @meal_list.meal_id = params.key('Add Meal')
   @meal_list.franchise_id = current_user.id
+  @meal_list.zipcode = current_user.zipcode
   @meal_list.save
    respond_to do |format|
     format.html { redirect_to homepages_url, notice: 'Meal added to franchise!' }
@@ -35,7 +36,7 @@ def new
     end
 
     def meal_list_params
-      params.require(:meal_list).permit(:meal_id, :franchise_id)
+      params.require(:meal_list).permit(:meal_id, :franchise_id, :zipcode)
     end
 end
 
