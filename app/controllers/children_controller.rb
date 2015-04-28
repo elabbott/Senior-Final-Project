@@ -16,15 +16,21 @@ def create
       end
     end
 end
+def edit
+    @child =Child.find(params[:id])
+  end
 
 def approve
     @child.approved = true
      format.html{redirect_to homepages_url, notice: 'Child was approved'}
   end
-
+  
 
 
   private
+  def set_chiild
+      @child = Child.find(params[:id])
+    end
 
     def child_params
       params.require(:child).permit(:name, :dob, :parent_id, :school_id, :approved)
