@@ -36,7 +36,6 @@
           <thead>
           <tr>
             <td>Name</td>
-            <td>Students Registered with School</td>
             <td>Select</td>
           </tr>
           </thead>
@@ -44,7 +43,6 @@
           <% School.where(:zipcode => current_user.zipcode).each do |schools|%>
           <tr>
             <td><%= schools.name %></td>
-            <td><%= Child.count(:all, :conditions => ":school_id = " + schools.id.to_s)%></td>
             <%= f.hidden_field :school_id, :value => schools.id %>
             <td><%= f.submit 'Add School', name: schools.id, class: "btn btn-success btn-block"%></td>
           </tr>
