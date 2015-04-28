@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<% Meal.where(:price => @order.price).each do |meal| %>
+
+<h1>Order of <%= meal.name %> for <%= current_user.fname%> <%= current_user.lname %></h1>
+
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Child</th>
+			<th>Price</th>
+			<th>Description</th>
+			<th>Payment Type</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% Child.where(:id => @order.child_id).each do |child| %>
+		<tr>
+			<td><%= child.name %></td>
+			<td><%= @order.price%></td>
+			<td><%= meal.description %></td>
+			<td><%= @order.pay_type %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<% end %>
+<%if current_user.user_type == 4 %>
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<% end %>
+<%= link_to 'Back', authenticated_root_path %>

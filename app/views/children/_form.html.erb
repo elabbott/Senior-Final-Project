@@ -1,0 +1,32 @@
+<%= form_for(@child) do |f| %>
+  <% if @child.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@child.errors.count, "error") %> prohibited this child from being saved:</h2>
+
+      <ul>
+      <% @child.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%@schools = School.where(:zipcode => current_user.zipcode)%>
+  
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br>
+    <%= f.date_field :dob %>
+  </div>
+    <div class="field">
+    <%= f.label :school_id %><br>
+		<%= f.select(:school_id, options_for_select(@schools.collect {|p| [ p.name, p.id ] }),{}, { :class => 'form-control', :id => 'type_dd'})%>
+  </div>
+  <%= f.hidden_field :parent_id, :value => current_user.id%>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

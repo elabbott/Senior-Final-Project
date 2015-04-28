@@ -1,0 +1,21 @@
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Calories</th>
+					<th>Price</th>
+
+			</thead>
+			<tbody>
+				<% Meal.all.each do |meal| %>
+							<tr>
+								<td><%= meal.name %></td>
+								<td><%= meal.description %></td>
+								<td><%= meal.calories %></td>
+								<td><%= meal.price%></td>
+							</tr>
+				<% end %>
+			</tbody>
+		</table>
+

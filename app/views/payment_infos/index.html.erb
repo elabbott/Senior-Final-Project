@@ -1,0 +1,40 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<h1>Listing payment_infos</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>C type</th>
+      <th>Cnum</th>
+      <th>Expdate</th>
+      <th>Cvv</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payment_infos.each do |payment_info| %>
+      <tr>
+        <td><%= payment_info.name %></td>
+        <td><%= payment_info.c_type %></td>
+        <td><%= payment_info.cnum %></td>
+        <td><%= payment_info.expdate %></td>
+        <td><%= payment_info.cvv %></td>
+        <td><%= link_to 'Show', payment_info %></td>
+        <td><%= link_to 'Edit', edit_payment_info_path(payment_info) %></td>
+        <td><%= link_to 'Destroy', payment_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment info', new_payment_info_path %>
+<%= link_to 'Back', authenticated_root_path, :class => "btn btn-success" %>

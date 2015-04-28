@@ -1,0 +1,40 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<h1>Listing franchises</h1>
+
+<table>
+  <thead class="table table-bordered table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Owner ID</th>
+      <th>School ID</th>
+      <th>Approved</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @franchises.each do |franchise| %>
+      <tr>
+        
+        <td><%= franchise.id %></td>
+        <td><%= franchise.user_id %></td>
+        <td><%= franchise.school_id %></td>
+        <td><%= franchise.approved %></td>
+        <td><%= link_to 'Show', franchise %></td>
+        <td><%= link_to 'Edit', edit_franchise_path(franchise) %></td>
+        <td><%= link_to 'Destroy', franchise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Franchise', new_franchise_path %>
+<%= link_to 'Back', authenticated_root_path, :class => "btn btn-success" %>
+

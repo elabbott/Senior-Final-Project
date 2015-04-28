@@ -1,0 +1,42 @@
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+<%= form_tag(process_payment_path) do%>
+<h1>Payment Information: </h1>
+<div class="field">
+	<%= label_tag "Name" %>
+	<br>
+	<%= text_field_tag :name %>
+</div>
+<div class="field">
+	<%= label_tag "Card Type" %>
+	<br>
+	<%= select_tag :c_type,  options_for_select([ "VISA", "MasterCard", "American Express" ], "MasterCard") %>
+</div>
+<div class="field">
+	<%= label_tag "Card Number" %>
+	<br>
+	<%= number_field_tag :cnum, nil,   size: 75 %>
+</div>
+<div class="field">
+	<%= label_tag "Expiration Date" %>
+	<br>
+	<%= date_select :expdate, :start_year => Date.current.year %>
+</div>
+<div class="field">
+	<%= label_tag "cvv" %>
+	<br>
+	<%= number_field_tag :cvv  %>
+	<%= hidden_field_tag :order_id, params[:id]  %>
+</div>
+<div class="field">
+	<%= label_tag "Save this card" %>
+	<br>
+	<%= select_tag :savecard,  options_for_select([ "Save","Dont Save" ], "Dont Save") %>
+ 
+<div>
+	
+	<%= render 'mysavedcards'%>
+<%= submit_tag 'Submit' %>
+
+<%end%>

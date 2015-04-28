@@ -1,0 +1,27 @@
+<div align="center">
+
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	<div>
+		<%= f.email_field :email, autofocus: true, :class => 'form-control', :placeholder => 'Email' %>
+	</div>
+	<br>
+	<div>
+		<%= f.password_field :password, autocomplete: "off",:class => 'form-control', :placeholder => 'Password' %>
+	</div>
+
+</div>
+<div align="left">
+	<br>
+	<%= f.submit "Sign In", :class => 'btn btn-success btn-lg custombtnblock'%>
+	
+	<% if devise_mapping.rememberable? -%>
+	<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+	<% end -%>
+	<br>
+	<br>
+	<%= link_to "Password Reset", new_password_path(resource_name), :class => 'btn btn-default btn-lg' %>
+	
+	<br>
+
+</div>
+<% end %>

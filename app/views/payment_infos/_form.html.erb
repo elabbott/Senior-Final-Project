@@ -1,0 +1,40 @@
+<%= form_for(@payment_info) do |f| %>
+  <% if @payment_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payment_info.errors.count, "error") %> prohibited this payment_info from being saved:</h2>
+
+      <ul>
+      <% @payment_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :c_type %><br>
+    <%= f.select :c_type, options_for_select([ "VISA", "MasterCard", "American Express" ], "MasterCard") %>
+  </div>
+  <div class="field">
+    <%= f.label :cnum %><br>
+    <%= f.number_field :cnum %>
+  </div>
+  <div class="field">
+    <%= f.label :expdate %><br>
+    <%= f.date_select :expdate %>
+  </div>
+  <div class="field">
+    <%= f.label :cvv %><br>
+    <%= f.number_field :cvv %>
+    	<%= hidden_field_tag :order_id, params[:id]  %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+	<%= link_to 'Back', authenticated_root_path, :class => "btn btn-primary" %>
+  </div>
+<% end %>

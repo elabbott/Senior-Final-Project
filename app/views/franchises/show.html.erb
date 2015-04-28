@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @franchise.id %>
+</p>
+
+<p>
+  <strong>Owner id:</strong>
+  <%= @franchise.user_id %>
+</p>
+
+<p>
+  <strong>School id:</strong>
+  <%= @franchise.school_id %>
+</p>
+<p>
+  <strong>Approved:</strong>
+  <%= @franchise.approved %>
+</p>
+
+<%= link_to 'Edit', edit_franchise_path(@franchise), :class => "btn btn-primary" %> |
+<%= link_to 'Home Page', authenticated_root_path, :class => "btn btn-primary" %>

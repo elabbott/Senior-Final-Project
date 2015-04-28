@@ -1,0 +1,376 @@
+commit 32afaa5049510cc90c25333b5c69504c81957183
+Author: mnkhusnitdinov@gmail.com <mnkhusnitdinov@gmail.com>
+Date:   Wed Apr 22 19:17:24 2015 -0400
+
+    orders
+
+commit f416a2105869f211df4989d6d8395bd33c4effd4
+Author: mnkhusnitdinov@gmail.com <mnkhusnitdinov@gmail.com>
+Date:   Tue Apr 21 22:24:17 2015 -0400
+
+    added purchase meal funct. need tie into order and feedback
+
+commit 4534bfef20ee441d7de31969c44c21eb2f6061a2
+Author: mnkhusnitdinov@gmail.com <mnkhusnitdinov@gmail.com>
+Date:   Tue Apr 21 20:56:57 2015 -0400
+
+    parent reg child add
+
+commit d541ba65ed64e2eb170cc617029224d6a57e2e2d
+Author: mnkhusnitdinov@gmail.com <mnkhusnitdinov@gmail.com>
+Date:   Tue Apr 21 20:14:49 2015 -0400
+
+    Remove useless scaffold
+
+commit bf71fa49ba8c44bffb6f2fb0395d96868388b1f2
+Author: mnkhusnitdinov@gmail.com <mnkhusnitdinov@gmail.com>
+Date:   Tue Apr 21 20:01:20 2015 -0400
+
+    work
+
+commit 6ebb1dc20e524cc1fba71f97eaac9da538392370
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 17:57:26 2015 -0400
+
+    Fixed adding school to franchises
+
+commit 520a1eed7205b44b92a4bd6ed4376d54308c9e8a
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 17:31:02 2015 -0400
+
+    Added Orders table to the homepage, orders still need to be created
+
+commit 13bd30e428e0a0d02080755e1dfeea7de33debaf
+Merge: 1727af2 7f8b911
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 17:10:40 2015 -0400
+
+    Merge branch 'eric' into jacob
+
+commit 1727af2fcfef966d8a02c397a9124227ebd987f2
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 17:02:24 2015 -0400
+
+    Added Orders tab functionality
+
+commit 7f8b9114f27446bfc516ecf86f277dc826aa07b4
+Merge: 486a713 81a57a3
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 16:52:00 2015 -0400
+
+    Merge branch 'jacob' into eric
+
+commit 81a57a37927a834c5097316a3f77ef82176aabc0
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 16:51:08 2015 -0400
+
+    Feedbacks tab functionality added
+
+commit 486a7137a931d7b0b05ed965e59b0edf2b85b099
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 21 16:49:41 2015 -0400
+
+    more datatables
+
+commit 3e58d3a0cfa1698831f36bcf8ed862bd96446886
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 16:35:16 2015 -0400
+
+    Added High Voltage Gem and new Navbar links
+
+commit ca57bbe9597e2c56771697f3e4c8845132341169
+Merge: e6581f3 ab51513
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 21 16:28:25 2015 -0400
+
+    aoghlgonge
+
+commit ab5151309a0067d7c99d96a967310ded9e6f8089
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 21 16:26:45 2015 -0400
+
+    delete gemfile.lock
+
+commit 8c1ca94d3c2b0fbf5549a42d92fb6670dab35152
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 21 16:23:51 2015 -0400
+
+    datatable for create franchise
+
+commit 34019f4c2a1c4a28494f34832eca35481b2f06b7
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 16:09:45 2015 -0400
+
+    Fixed feedback to be prettier/easier to look at
+
+commit e6581f30af1753f3b442104ff506a90b47b9fffe
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 21 15:55:17 2015 -0400
+
+    Made selecting a child transition smoother
+
+commit 7d4d74aab9f503c2b9629d94720f8f0cb90f1173
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 21 14:58:22 2015 -0400
+
+    datatables gem
+
+commit 5bfd585482b6be4e3db04434a0396f7971e42e00
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 14 15:47:13 2015 -0400
+
+    heroku push trial eric 1
+
+commit 64d77004a5bee1e9a4f2583f9a9b7d2b07c81c1b
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 14 15:22:28 2015 -0400
+
+    heroku push
+
+commit 7a5b6787fac2b7c242c5135073078d3b97501116
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 14 14:16:35 2015 -0400
+
+    fixed more stuff
+
+commit 7d1db06bd18849eb96453ee68dd720b190492ec7
+Merge: 7f4b4ed 9a99413
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 14 14:09:54 2015 -0400
+
+    fixed conflict
+
+commit 7f4b4ed2aec54206deebac41d477e1c416d4a549
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 14 14:07:18 2015 -0400
+
+    Pulling for merge
+
+commit 9a99413ac220f7faa98499004daa67dc003cfaca
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 14 14:05:47 2015 -0400
+
+    fixed user creation stuffs
+
+commit 250670b182f857f129c9fb7b2fb9bd7368519bbd
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Tue Apr 14 13:34:13 2015 -0400
+
+    trying to fix user create bugs
+
+commit 8b5d3aadc75c38b279596c8f9a91bc1dccc9d001
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 14 12:46:53 2015 -0400
+
+    Changes added, user creation screwy
+
+commit 13310bb38aff1ff1dba5730b44fabc774c22dace
+Merge: 7368971 2b6b2f3
+Author: Jacob <jkb6292@gmail.com>
+Date:   Tue Apr 14 12:34:58 2015 -0400
+
+    fixed merge conflicts
+
+commit 2b6b2f320e7b218a667af22538aa38019b3e6769
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Sun Apr 12 18:09:20 2015 -0400
+
+    need to make approve buttons work, other than that basic functionality is almost done
+
+commit 9154632d4789f12b891498e5bec71d76b33fe44b
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Sun Apr 12 15:20:45 2015 -0400
+
+    changed table to display accurate info from last commit, whoopsies
+
+commit eb4b819690a01b93085d85c4b42678395ab40243
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Sun Apr 12 15:17:56 2015 -0400
+
+    create franchise form + table to see school ids
+
+commit 73689711f93c43ed204c6febdb146bd0b6395fef
+Author: Jacob <jkb6292@gmail.com>
+Date:   Sun Apr 12 15:15:20 2015 -0400
+
+    Added feedback option to Parent Users
+
+commit 46851610b95b0d5ac9d8973060f571763ac95ba7
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Sun Apr 12 15:10:03 2015 -0400
+
+    meals_list scaffold so franchises can have multiple meals
+
+commit 0ace846164b29139e1259926d578730f437c8d12
+Author: Jacob <jkb6292@gmail.com>
+Date:   Sun Apr 12 14:57:41 2015 -0400
+
+    Fixed schools table/child select
+
+commit 9a33ed8986faee08e7f2ecd41958bda5de16d689
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Sun Apr 12 14:52:06 2015 -0400
+
+    doing approval things for FO and admin
+
+commit dc4aebe0cb76674b021be20e44c4ba7ffd1f6702
+Author: Jacob <jkb6292@gmail.com>
+Date:   Sun Apr 12 14:41:58 2015 -0400
+
+    Finalized admins, added Cancan and Rolify
+
+commit 38a404a415a7f9d811c18aaced61fe540327109a
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Sat Apr 11 19:02:32 2015 -0400
+
+    school list
+
+commit a93a88d1029225689848a8b77534618192080cf3
+Author: Eric Abbott <eabbott113@gmail.com>
+Date:   Sat Apr 11 18:51:48 2015 -0400
+
+    franchise owner approved/unapproved added
+
+commit daa519d7458de7f018cc8d22168d50aa8b6c46aa
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 15 17:59:00 2015 -0400
+
+    added meal and child funct
+
+commit 3d491fc1576006d13065d4a541f6891e21245afa
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 15 17:20:47 2015 -0400
+
+    added meal and child funct
+
+commit a7dba278f927b90077724f8bb6506afbf453de1c
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 15 15:04:04 2015 -0400
+
+    g
+
+commit 0b01f4de929875d7e1a711d366008a24b39cb497
+Author: jacob <jkb6292@gmail.com>
+Date:   Thu Mar 12 18:45:29 2015 -0400
+
+    added feedback, order, paymentinfo scaffold and edited address to be zipcodes
+
+commit 4a0cccbac3a168db837a62954d0255d1a3f95277
+Author: jacob <jkb6292@gmail.com>
+Date:   Wed Mar 11 09:55:57 2015 -0400
+
+    Deploying to heroku
+
+commit 9b2be1b18945be44175565b8984683d1de4390b4
+Author: mnkhusnitdinov <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 8 22:02:21 2015 -0400
+
+    Meals
+
+commit 8bab0c296b162a21c7a7e590a6a6072db08c6f67
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 8 19:32:32 2015 -0400
+
+    Edit account
+
+commit e732e57262029078d6dbbdf9a1561e62f5d14a20
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 8 19:16:54 2015 -0400
+
+    fixed modals
+
+commit e02511ddf9e224e549b9f2b4c2975b82c7162cbd
+Author: Muzaffar <mnkhusnitdinov@gmail.com>
+Date:   Sun Mar 8 18:44:34 2015 -0400
+
+    test
+
+commit 260bef52976c9d42b57f071d0e31fa1b3c8790d1
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Sun Mar 8 16:33:56 2015 -0400
+
+    added navbar link and validation for chefs
+
+commit 998bf06e0de45d3b28edc4e70216fac8c6acced4
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Fri Mar 6 15:18:43 2015 -0500
+
+    added in chefs and functionality
+
+commit dfdf43320bb2ba19b90a2227ba542d46c7b100b1
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Fri Mar 6 13:02:32 2015 -0500
+
+    fixed admin stuff mostly
+
+commit 667881f6bdf9c4014fba77a777f1de0cdfff2034
+Author: jacob <jkb6292@gmail.com>
+Date:   Fri Mar 6 10:52:47 2015 -0500
+
+    made admins work sorta
+
+commit e458d9b405c6fbbb2c6fbac968f74816b3ad6bb5
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Thu Mar 5 16:14:13 2015 -0500
+
+    closer to working partial
+
+commit 71e6fb7ac4468c17597e6772c06c28af9b826960
+Author: jacob <jkb6292@gmail.com>
+Date:   Wed Mar 4 23:40:16 2015 -0500
+
+    got some more functionality on the homepage - need to fix school ids
+
+commit 993ee2ed000ef90b78a4ccee6b6bdf6a871d5892
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 19:29:29 2015 -0500
+
+    added limited homepage functionality
+
+commit 1efccf6ca46ec0f89a08602092b24bc93875b3b7
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 18:26:57 2015 -0500
+
+    added franchises
+
+commit 757d610ec49a1aac54709356fec583a66c30a94d
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 18:00:40 2015 -0500
+
+    Fixed user registration
+
+commit a7ca87d2380b066043c7e8b72fe045faa029f719
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 16:32:29 2015 -0500
+
+    added fields to reg, added seeds to db
+
+commit 96fe873c6a0ef191200c1a248198e2593692c38a
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 15:41:04 2015 -0500
+
+    added db tables, changing reg now
+
+commit 6f48971cc27f6faf826edb7e90956c2edfee1978
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 14:04:49 2015 -0500
+
+    fixed the homepage up, still needs css
+
+commit c472a68536d8d5031bc18ca4f0997d4c4bc596f8
+Author: Jacob Benoit <jkb6292@gmail.com>
+Date:   Wed Mar 4 13:05:11 2015 -0500
+
+    added bootstrap
+
+commit 5b8c9c9b2f4c235b300d89cb4e00ea875bbff31d
+Author: jacob <jkb6292@gmail.com>
+Date:   Tue Mar 3 15:17:38 2015 -0500
+
+    made devise work
+
+commit 035553f305e9122ab27ccfaabc70af4d2988ec91
+Author: jacob <jkb6292@gmail.com>
+Date:   Tue Mar 3 14:37:09 2015 -0500
+
+    Created project
