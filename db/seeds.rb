@@ -53,6 +53,7 @@ School.create!(
     zipcode: 31602,
     school_id: 2
  )
+<<<<<<< HEAD
  
  School.create!(
     name: "Dewar Valdosta Elementary",
@@ -83,6 +84,10 @@ School.create!(
     zipcode: 31601,
     school_id: 7
  )
+=======
+
+
+>>>>>>> 410d2dfd68e09164b14cf9ee2a0f7b8dda633fd4
   
  Meal.create!(
     name: "Spaghetti",
@@ -99,6 +104,7 @@ School.create!(
     price: 3.99,
     image_url: open('app/assets/images/burger.jpg')
   )
+<<<<<<< HEAD
   
    Meal.create!(
     name: "Fresh Fruits",
@@ -210,3 +216,5 @@ School.create!(
 
 
 
+=======
+>>>>>>> 410d2dfd68e09164b14cf9ee2a0f7b8dda633fd4
