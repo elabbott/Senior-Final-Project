@@ -6,9 +6,9 @@ class PurchaseMealsController < InheritedResources::Base
    @school = School.find_by_id(@child.school_id)
    @date = params[:date]
    @total = 0.0
-   @franchise_id = params[:franchise_id]
+   @franchise = params[:franchise_id_value]
    # @franchise = Franchise.where(:user_id => @franchise_id)
-   
+
    
    if @selections != nil
      @selections.each do |meal|
@@ -16,7 +16,7 @@ class PurchaseMealsController < InheritedResources::Base
       #   @franchise = Franchise.where(:user_id => meal_list.franchise_id)
       # end
       # @franchise_id_value = params.key('franchise_id')
-      PurchaseMeal.create(:parent_id => current_user.id, :child_id => @child.id, :school_id => @school.id, :paid => false, :date_for_meal => @date, :meal_id => meal.id)
+      PurchaseMeal.create(:parent_id => current_user.id, :child_id => @child.id, :school_id => @school.id, :paid => false, :date_for_meal => @date, :meal_id => meal.id, :franchise_id => @franchise)
       @total = @total+meal.price
      end
 
