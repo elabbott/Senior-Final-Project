@@ -3,12 +3,28 @@
     $('.table').DataTable({});
   })
 </script>
-<h1>Listing meal_lists</h1>
+
+<style>
+	.list_image {
+		width: 60px;
+		height: 70px;
+	}
+</style>
+
+<header>
+	<%= render 'layouts/navigation' %>
+</header>
+
+<h1>Listing Meals for  <%= current_user.fname %> <%= current_user.lname %>'s Franchises</h1>
+
+<br/>
+<br/>
 
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Meal Name</th>
+      <th>Meal Image</th>
       <th>Meal Price</th>
       <th>Meal Description</th>
       <th>Calories</th>
@@ -19,6 +35,7 @@
     <% @meal_lists.each do |meal_list| %>
       <tr>
         <td><%= Meal.find_by_id(meal_list.meal_id).name %></td>
+        <td><%= image_tag(Meal.find_by_id(meal_list.meal_id).image_url, class: 'list-image') %></td>
         <td><%= Meal.find_by_id(meal_list.meal_id).price %></td>
         <td><%= Meal.find_by_id(meal_list.meal_id).description %></td>
         <td><%= Meal.find_by_id(meal_list.meal_id).calories %></td>

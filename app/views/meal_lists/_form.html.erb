@@ -3,6 +3,13 @@
     $('.table').DataTable({});
   })
 </script>
+<style>
+	.list_image {
+		width: 60px;
+		height: 70px;
+	}
+</style>
+
 <%= form_for(@meal_list) do |f| %>
 <% if @meal_list.errors.any? %>
     <div id="error_explanation">
@@ -28,6 +35,7 @@
           <thead>
           <tr>
             <th>Name</th>
+            <th>Picture</th>
             <th>Description</th>
             <th>Price</th>
             <th>Calories</th>
@@ -38,11 +46,12 @@
           <% Meal.all.each do |meals|%>
           <tr>
             <td><%= meals.name %></td>
+            <td><%= image_tag(meals.image_url, class: 'list_image')%></td>
             <td><%= meals.description%></td>
             <td><%= meals.price %></td>
             <td><%= meals.calories %></td>
             <%= f.hidden_field :meal_id, :value => meals.id %>
-            <td><%= f.submit 'Add Meal', name: meals.id, class: "btn btn-primary btn-block"%></td>
+            <td><%= f.submit 'Add Meal', name: meals.id, class: "btn btn-success btn-block"%></td>
           </tr>
           <% end %>
 

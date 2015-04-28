@@ -16,7 +16,6 @@
 					<%= link_to 'Feedback', page_path('feedback'), class: 'navbar-brand' %>
 					<%= link_to 'Orders', page_path('orders'), class: 'navbar-brand' %>
 				<% elsif current_user.user_type == 2 && current_user.franchise == true %>
-					<%= link_to 'Meal Lists', page_path('meal_lists'), class: 'navbar-brand' %>
 					<%= link_to 'Money', page_path('money'), class: 'navbar-brand' %>
 				<% elsif current_user.user_type == 3%>
 					<%= link_to 'Feedback', page_path('feedback'), class: 'navbar-brand' %>

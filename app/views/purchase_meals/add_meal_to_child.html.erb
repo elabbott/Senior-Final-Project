@@ -9,12 +9,8 @@
 	<%= render 'layouts/navigation' %>
 </header>
 <%= form_tag(process_add_meal_to_child_path) do%>
-<<<<<<< HEAD
-<h1>Make meal selections for <%=Child.find_by_id(params[:id]).name %></h1>
-=======
 <h1>Make meal selections for <%=Child.find_by_id(params[:id]).name%></h1>
 <br/>
->>>>>>> master
 <table class="table table-striped table-bordered">
 	<%=hidden_field_tag 'child', Child.find_by_id(params[:id]).id%>
 	<thead>
@@ -45,6 +41,6 @@
 </table>
 
 
-<%= submit_tag 'Submit' %>
+<%= submit_tag 'Submit' class: 'btn btn-success'%>
 
 <%end%>
