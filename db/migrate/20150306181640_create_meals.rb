@@ -5,6 +5,7 @@ class CreateMeals < ActiveRecord::Migration
       t.string :description
       t.float :calories
       t.decimal :price
+      t.string :image_url
 
       t.timestamps
     end

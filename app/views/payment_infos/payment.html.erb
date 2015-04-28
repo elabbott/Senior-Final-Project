@@ -16,7 +16,7 @@
 <div class="field">
 	<%= label_tag "Card Number" %>
 	<br>
-	<%= text_field_tag :cnum %>
+	<%= number_field_tag :cnum, nil,   size: 75 %>
 </div>
 <div class="field">
 	<%= label_tag "Expiration Date" %>
@@ -29,7 +29,14 @@
 	<%= number_field_tag :cvv  %>
 	<%= hidden_field_tag :order_id, params[:id]  %>
 </div>
-
+<div class="field">
+	<%= label_tag "Save this card" %>
+	<br>
+	<%= select_tag :savecard,  options_for_select([ "Save","Dont Save" ], "Dont Save") %>
+ 
+<div>
+	
+	<%= render 'mysavedcards'%>
 <%= submit_tag 'Submit' %>
 
 <%end%>

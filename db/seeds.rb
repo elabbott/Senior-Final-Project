@@ -68,19 +68,153 @@ School.create!(
     zipcode: 31602,
     school_id: 2
  )
+ 
+ School.create!(
+    name: "Dewar Valdosta Elementary",
+    zipcode: 31605,
+    school_id: 3
+ )
+ 
+ School.create!(
+    name: "Clyatville Valdosta Elementary",
+    zipcode: 31601,
+    school_id: 4
+ )
 
+ School.create!(
+    name: "Mason Valdosta Elementary",
+    zipcode: 31602,
+    school_id: 5
+ )
 
+ School.create!(
+    name: "Newbern Middle School",
+    zipcode: 31602,
+    school_id: 6
+ )
+ 
+  School.create!(
+    name: "Lowndes Middle School",
+    zipcode: 31601,
+    school_id: 7
+ )
   
  Meal.create!(
     name: "Spaghetti",
     description: "Noodles, Sauce, and Meat",
     calories: 221,
-    price: 5.45
+    price: 5.45,
+    image_url: open('app/assets/images/spaghetti.jpg')
   )
   
   Meal.create!(
     name: "Hamburger and Fries",
     description: "Beef Patty and Bread buns with potato fries",
     calories: 719,
-    price: 3.99
+    price: 3.99,
+    image_url: open('app/assets/images/burger.jpg')
+  )
+  
+   Meal.create!(
+    name: "Fresh Fruits",
+    description: "Fresh fruits and vegetables",
+    calories: 250,
+    price: 2.99,
+    image_url: open('app/assets/images/fruits.jpg')
+  )
+  
+   Meal.create!(
+    name: "Fish",
+    description: "Fish with brocolli",
+    calories: 650,
+    price: 6.99,
+    image_url: open('app/assets/images/fish.jpg')
+  )
+  
+   Meal.create!(
+    name: "Pizza",
+    description: "Pizza Margheritta",
+    calories: 900,
+    price: 5.99,
+    image_url: open('app/assets/images/pizza.jpg')
+  )
+  
+  Meal.create!(
+    name: "Rolls",
+    description: "Spring Rolls with eggs",
+    calories: 440,
+    price: 2.99,
+    image_url: open('app/assets/images/spring roll.jpg')
+  )
+  
+  Meal.create!(
+    name: "Shrimp",
+    description: "Shrimp toast",
+    calories: 500,
+    price: 7.99,
+    image_url: open('app/assets/images/shrimp.jpg')
+  )
+  
+  Meal.create!(
+    name: "Teriyaki Wings",
+    description: "Teriyaki Wings",
+    calories: 900,
+    price: 7.99,
+    image_url: open('app/assets/images/teriaky.jpg')
+  )
+  
+  Meal.create!(
+    name: "Fried scallops",
+    description: "Fried scallops with crab salad",
+    calories: 850,
+    price: 7.99,
+    image_url: open('app/assets/images/scalops.jpg')
+  )
+  
+  Meal.create!(
+    name: "Chicken Lo-Mein",
+    description: "Chicken Lo-Mein",
+    calories: 600,
+    price: 5.99,
+    image_url: open('app/assets/images/chicken-lo-mein.jpg')
+  )
+  
+  Meal.create!(
+    name: "Beef Lo-Mein",
+    description: "Beef Lo-Mein",
+    calories: 600,
+    price: 5.99,
+    image_url: open('app/assets/images/beef-lo-mein.jpg')
+  )
+  
+  Meal.create!(
+    name: "Sesame Chicken",
+    description: "Chunks chicken in golden brown sauce & served w.steamed broccoli (sesame in the top)",
+    calories: 820,
+    price: 8.99,
+    image_url: open('app/assets/images/sesame.jpg')
+  )
+  
+  Meal.create!(
+    name: "Dragon & Phoenix",
+    description: "Shrimp w. snow peas, broccoli in Chef special sauce and General Tso's chicken",
+    calories: 900,
+    price: 8.99,
+    image_url: open('app/assets/images/dragon.jpg')
+  )
+  
+  Meal.create!(
+    name: "Szechuan Orange Chicken",
+    description: "Small chunks of chicken coated w. special spicy sauce flavored w. orange peels",
+    calories: 900,
+    price: 8.99,
+    image_url: open('app/assets/images/szechuan.jpg')
+  )
+  
+  Meal.create!(
+    name: "Seafood Delight",
+    description: "Fresh shrimp, scallops, lobster meat, sauteed assorted Chinese vegetable",
+    calories: 900,
+    price: 8.99,
+    image_url: open('app/assets/images/seafood.jpg')
   )
