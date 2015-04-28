@@ -1,25 +1,28 @@
-<h1>Listing purchase_meals</h1>
+<script>
+  $(document).ready(function() {
+  })
+</script>
+<h1>Orders for <%= current_user.fname %>, <%=current_user.lname %></h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Date</th>
+      <th>Meal</th>
+      <th>Child</th>
+      <th>School</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @purchase_meals.each do |purchase_meal| %>
+    <% PurchaseMeal.where(:paid => true, :franchise_id => current_user.id).each do |purchase_meal| %>
       <tr>
-        <td><%= link_to 'Show', purchase_meal %></td>
-        <td><%= link_to 'Edit', edit_purchase_meal_path(purchase_meal) %></td>
-        <td><%= link_to 'Destroy', purchase_meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= purchase_meal.date_for_meal %></td>
+        <td><%= Meal.find_by_id(purchase_meal.meal_id).name %></td>
+        <td><%= Child.find_by_id(purchase_meal.child_id).name %></td>
+        <td><%= School.where(:franchise_id => purchase_meal.franchise_id).name %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Purchase meal', new_purchase_meal_path %>

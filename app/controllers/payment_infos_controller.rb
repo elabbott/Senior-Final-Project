@@ -19,6 +19,9 @@ class PaymentInfosController < InheritedResources::Base
       @payment.update_attributes(:order_id => @order.id, :parent_id => current_user.id, :child_id => @order.child_id, :expdate => @date)
 
     end
+    PurchaseMeal.where(:order_id => @order.id).each do |purchase_meal|
+      purchase_meal.update_attributes(:paid => true)
+    end
 
     respond_to do |format|
       if params[:cnum].size != 16 && @savedpayment == nil
