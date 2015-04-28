@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_devise_permitted_parameters, if: :devise_controller?
 
   def access_denied(exception)
-    redirect_to admin_organizations_path, :alert => exception.message
+    redirect_to authenticated_root_path, :alert => exception.message
   end
 
   protected

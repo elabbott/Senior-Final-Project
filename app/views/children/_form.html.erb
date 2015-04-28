@@ -12,6 +12,7 @@
   <% end %>
   <%@schools = School.where(:zipcode => current_user.zipcode)%>
   
+  
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -27,6 +28,6 @@
   <%= f.hidden_field :parent_id, :value => current_user.id%>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-success'%>
   </div>
 <% end %>

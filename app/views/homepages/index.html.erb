@@ -95,14 +95,26 @@
 
 <% elsif current_user.user_type == 2 %>
 	<h1 class="text-center">Welcome, <%= current_user.fname %> <%= current_user.lname %>.</h1>
-	<div class="left">
-	<%= button_to "Request Franchise", new_franchise_path, method: :get %>
-	</div>
-	<div class="right">
- 	<!--<%= button_to "Create a Menu", add_meal_to_meal_list_path(current_user.id), :method => :get%> -->
-
-	</div>
-	<p></p>
+	
+	<br/>
+	<br/>
+	
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<tr>
+				<td class="col-md-1 main3">
+					<p>
+						To begin creating your franchise, please click the button on the right
+					</p>
+				</td>
+				<td class="col-md-1 main3">
+					<div class="left">
+						<%= button_to "Request Franchise", new_franchise_path, method: :get, class: 'btn btn-success' %>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -124,10 +136,9 @@
           <tr>
             <td><%= franchises.name %></td>
             <td><%= School.find_by_id(franchises.school_id).name%></td>
-
-            <td><%= button_to "Add to Menu", new_meal_list_path, method: :get%></td>
-            <td><%= button_to "See Menu", meal_lists_path, method: :get%></td>
-            <td><%= button_to "View Paid Orders", purchase_meals_path, method: :get %></td>
+            <td><%= button_to "Add to Menu", new_meal_list_path, method: :get, class: "btn btn-success"%></td>
+            <td><%= button_to "See Menu", meal_lists_path, method: :get, class: "btn btn-success"%></td>
+            <td><%= button_to "View Paid Orders", purchase_meals_path, method: :get, class: "btn btn-success" %></td>
           </tr>
           <% end %>
           </tbody>
@@ -279,7 +290,7 @@
 				<td><%= franchises.id %></td>
 				<td><%= franchises.school_id %></td>
 				<td><%= franchises.zipcode %></td>
-				<td><%= button_to 'Approve', edit_franchise_path(franchises.id), method: :get %> </td>
+				<td><%= button_to 'Approve', edit_franchise_path(franchises.id), method: :get, class: 'btn btn-success' %> </td>
 			</tr>
 			<% end %>
 		</tbody>
@@ -301,7 +312,7 @@
 				<td><%= child.name %></td>
 				<td><%= child.school_id %></td>
 				<td><%= child.dob %></td>
-				<td><%= button_to 'Approve', edit_child_path(child.id), method: :get %> </td>
+				<td><%= button_to 'Approve', edit_child_path(child.id), method: :get, class: 'btn btn-success' %> </td>
 			</tr>
 			<% end %>
 		</tbody>
