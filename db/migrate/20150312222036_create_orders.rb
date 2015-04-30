@@ -6,8 +6,6 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :child_id
       t.text :pay_type
       t.boolean :complete
-      t.boolean :feedback_flag
-      t.text :feedback
       t.integer :franchise_id
       t.date :date_for_meal
       t.timestamps

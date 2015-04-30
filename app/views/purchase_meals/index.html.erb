@@ -24,7 +24,7 @@
         <td><%= purchase_meal.date_for_meal %></td>
         <td><%= Meal.find_by_id(purchase_meal.meal_id).name %></td>
         <td><%= Child.find_by_id(purchase_meal.child_id).name %></td>
-        <td><%= School.where(:franchise_id => purchase_meal.franchise_id).name %></td>
+        <td><%= School.find_by_id(purchase_meal.school_id).name %></td>
       </tr>
     <% end %>
   </tbody>

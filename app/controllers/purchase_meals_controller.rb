@@ -1,6 +1,6 @@
 class PurchaseMealsController < InheritedResources::Base
  def process_add_meal_to_child
-   @selections = Meal.where(:id => MealList.find(params[:meals][:meal_id])) rescue nil
+   @selections = Meal.find(params[:meals][:meal_id]) rescue nil
    # @franchises = Franchise.where(:user_id => MealList.find(params[:meals][:franchise_id])) rescue nil
    @child = Child.find_by_id(params[:child_id])
    @school = School.find_by_id(@child.school_id)
@@ -28,6 +28,7 @@ class PurchaseMealsController < InheritedResources::Base
      end
 
    end
+
       
     respond_to do |format|
 
@@ -35,9 +36,21 @@ class PurchaseMealsController < InheritedResources::Base
 
     end
   end
+  
+     def process_feedback
+  
+      @purchase_meal = PurchaseMeal.find_by_id(params[:purchase_meal_id]) rescue nil
+    @purchase_meal.update_attributes(:feedback_flag => true, :feedback => params[:feedback])
+  respond_to do |format|
+
+      format.html { redirect_to homepages_url, notice: 'Thank you for your input!' }
+
+    end
+end
+  
   private
 
     def purchase_meal_params
-      params.require(:purchase_meal).permit(:paid, :order_id)
+      params.require(:purchase_meal).permit(:paid, :order_id, :feedback, :feedback_flag)
     end
 end

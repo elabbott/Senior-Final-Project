@@ -229,3 +229,19 @@ School.create!(
     price: 8.99,
     image_url: open('app/assets/images/seafood.jpg')
   )
+
+  Franchise.create!(
+    school_id: 2,
+    user_id: 4,
+    zipcode: 31602,
+    name: "Mcdonalds",
+    approved: true
+  )
+  
+  Child.create!(
+    name: "Billy Bob",
+    dob: '06/02/2002',
+    parent_id: 5,
+    school_id: 2,
+    approved: true
+  )

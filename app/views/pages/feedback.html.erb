@@ -18,15 +18,15 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% Order.where(:parent_id => current_user.id).each do |order| %>
-		<%Meal.where(:price => order.price).each do |meal| %>
+		<% PurchaseMeal.where(:parent_id => current_user.id).each do |p| %>
+			<% Meal.where(:id => p.meal_id).each do |m| %>
 		<tr>
-			<td><%= meal.name %></td>
-			<td><%= order.price %></td>
-			<%if order.feedback_flag == nil || order.feedback_flag == "false"%>
-			<td><%= button_to "Leave Feedback", feedback_path(order.id), :method => :get, class: "btn btn-success" %></td>
+			<td><%= m.name %></td>
+			<td><%= m.price %></td>
+			<%if p.feedback_flag == nil || p.feedback_flag == "false"%>
+			<td><%= button_to "Leave Feedback", feedback_path(p.id), :method => :get, class: "btn btn-success" %></td>
 			<%else%>
-			<td><%= order.feedback%></td>
+			<td><%= p.feedback%></td>
 			<%end%>
 			<% end %>
 			<% end %>
@@ -50,13 +50,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% Order.where(:feedback_flag => true ).each do |order| %>
-			<% Meal.where(:price => order.price).each do |meal| %>
+		<% PurchaseMeal.all.each do |p| %>
+		<% Meal.where(:id => p.meal_id).each do |m| %>
 				<tr>
-					<td><%= meal.name %></td>
-					<td><%= order.feedback %></td>
+					<td><%= m.name %></td>
+					<td><%= p.feedback %></td>
 				</tr>
-			<% end %>
+		<% end %>
 		<% end %>
 	</tbody>
 </table>

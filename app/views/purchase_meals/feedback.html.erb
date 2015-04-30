@@ -10,7 +10,7 @@
 	<%= label_tag "Dissatisfied with your meal? Or just loved our service? Either way, please leave us a note and our Chefs and Owners will read " %>
 	<br>
 	<%= text_area_tag :feedback %>
-	<%= hidden_field_tag :order_id, params[:id]  %>
+	<%= hidden_field_tag :purchase_meal_id, params[:id]  %>
 
 </div>
 <%= submit_tag 'Submit' %>

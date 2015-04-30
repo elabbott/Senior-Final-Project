@@ -37,7 +37,7 @@
 			<td><%= Franchise.where(:user_id => meal_list.franchise_id).first.name %></td>
 
 			<%= hidden_field_tag 'franchise_id_value', Franchise.where(:user_id => meal_list.franchise_id).first.user_id %>
-			<td><%= check_box_tag 'meals[meal_id][]', meal_list.id, false, :class => "hue" %></td>
+			<td><%= check_box_tag 'meals[meal_id][]', meal_list.meal_id, false, :class => "hue" %></td>
 			
 		</tr>
 		<% end %>

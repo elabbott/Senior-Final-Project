@@ -8,6 +8,8 @@ class CreatePurchaseMeals < ActiveRecord::Migration
       t.integer :order_id
       t.integer :franchise_id
       t.date    :date_for_meal
+      t.boolean :feedback_flag
+      t.text :feedback
       t.integer :meal_id
       t.timestamps
     end

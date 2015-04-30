@@ -31,9 +31,9 @@ Yummytummies::Application.routes.draw do
 
   post "/process_payment" , :to => "payment_infos#process_payment", :as => 'process_payment'
   
-  get "/feedback/:id" , :to => "orders#feedback", :as => 'feedback'
+  get "/feedback/:id" , :to => "purchase_meals#feedback", :as => 'feedback'
 
-  post "/process_feedback" , :to => "orders#process_feedback", :as => 'process_feedback'
+  post "/process_feedback" , :to => "purchase_meals#process_feedback", :as => 'process_feedback'
 
   get "/add_meal_to_meal_list/:id", :to => "meal_lists#add_meal_to_meal_list", :as => 'add_meal_to_meal_list'
 
