@@ -32,15 +32,15 @@
   </thead>
 
   <tbody>
-    <% @meal_lists.each do |meal_list| %>
-      <tr>
-        <td><%= Meal.find_by_id(meal_list.meal_id).name %></td>
-        <td><%= image_tag(Meal.find_by_id(meal_list.meal_id).image_url, class: 'list-image') %></td>
-        <td><%= Meal.find_by_id(meal_list.meal_id).price %></td>
-        <td><%= Meal.find_by_id(meal_list.meal_id).description %></td>
-        <td><%= Meal.find_by_id(meal_list.meal_id).calories %></td>
-      </tr>
-    <% end %>
+	    <% @meal_lists.where(:franchise_id => current_user.id).each do |meal_list| %>
+	      <tr>
+	        <td><%= Meal.find_by_id(meal_list.meal_id).name %></td>
+	        <td><%= image_tag(Meal.find_by_id(meal_list.meal_id).image_url, class: 'list_image') %></td>
+	        <td><%= Meal.find_by_id(meal_list.meal_id).price %></td>
+	        <td><%= Meal.find_by_id(meal_list.meal_id).description %></td>
+	        <td><%= Meal.find_by_id(meal_list.meal_id).calories %></td>
+	      </tr>
+	    <% end %>
   </tbody>
 </table>
 
